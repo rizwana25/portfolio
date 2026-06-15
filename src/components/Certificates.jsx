@@ -13,7 +13,7 @@ function Certificates() {
     {
       title: "AI Virtual Internship",
       issuer: "AICTE & Shell",
-      image: "/cert3.jpg",
+      image: "/cert/aicte.jpeg",
     },
     {
       title: "Python Programming",
@@ -118,28 +118,20 @@ function Certificates() {
                 "
               >
 
-                <div
-                  className="
-                  h-52
-                  bg-gradient-to-br
-                  from-[#EEF4EA]
-                  via-[#F9FBF8]
-                  to-[#E4ECDF]
-                  flex
-                  items-center
-                  justify-center
-                  "
-                >
-                  <span
-                    className="
-                    text-[#8FA684]
-                    text-lg
-                    font-semibold
-                    "
-                  >
-                    Certificate Preview
-                  </span>
-                </div>
+<div className="h-72 overflow-hidden">
+  <img
+    src={cert.image}
+    alt={cert.title}
+    className="
+      w-full
+      h-full
+      object-cover
+      transition-transform
+      duration-500
+      hover:scale-105
+    "
+  />
+</div>
 
                 <div className="p-6">
 

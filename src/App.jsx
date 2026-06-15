@@ -22,7 +22,7 @@ function App() {
       {/* Selected Works will go here later */}
 
       <Experience />
-      <Certificates />
+      
       <Contact />
       <Footer/>
 

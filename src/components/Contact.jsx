@@ -119,7 +119,7 @@ function Contact() {
 
               {/* LinkedIn */}
               <a
-                href="YOUR_LINKEDIN_URL"
+                href="https://www.linkedin.com/in/fathimathrizwana"
                 target="_blank"
                 rel="noreferrer"
                 className="
