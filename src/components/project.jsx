@@ -32,7 +32,7 @@ function Projects() {
       category: "Web Application",
       description:
         "A web application that helps users understand their environmental impact by tracking daily carbon emissions, providing personalized insights, and encouraging sustainable habits through community-driven challenges.",
-      image: "/projects/carbon.jpg",
+      image: "/cover/carbon.jpeg",
       tech: ["Flask", "MySQL", "HTML", "CSS", "JavaScript"],
     },
 
