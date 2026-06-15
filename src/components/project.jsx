@@ -14,7 +14,7 @@ function Projects() {
       category: "Portfolio Website",
       description:
         "A portfolio website developed for a graphic design business to showcase services, creative work, and brand identity.",
-      image: "/projects/outlinx.jpg",
+      image: "/cover/outlinx.jpeg",
       tech: ["HTML", "Tailwind CSS", "JavaScript"],
     },
 
