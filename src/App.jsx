@@ -6,6 +6,7 @@ import Experience from "./components/Experience";
 import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Projects from "./components/project";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Hero />
       <About />
       <Skills />
+      <Projects/>
 
       {/* Selected Works will go here later */}
 
