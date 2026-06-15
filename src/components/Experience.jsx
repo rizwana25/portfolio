@@ -50,8 +50,8 @@ function Experience() {
           lg:text-7xl
           font-bold
           text-gray-900
-          mb-12
-          md:mb-16
+          mb-8
+          md:mb-10
           "
         >
           Work{" "}
