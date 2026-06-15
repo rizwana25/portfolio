@@ -26,10 +26,7 @@ function App() {
       <Contact />
       <Footer/>
 
-
-    </>
-  );
-  <a
+      <a
   href="https://wa.me/918139055063"
   target="_blank"
   rel="noreferrer"
@@ -53,6 +50,10 @@ function App() {
 >
   <FaWhatsapp size={28} />
 </a>
+    </>
+    
+  );
+  
 }
 
 export default App;
