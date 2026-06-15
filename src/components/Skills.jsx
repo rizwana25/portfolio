@@ -21,12 +21,21 @@ function Skills() {
       tech: ["Python", "Java"],
     },
     {
+      title: "AI & Automation",
+      tech: [
+        "Prompt Engineering",
+        "NLP",
+        "Automation",
+        "Relay",
+      ],
+    },
+    {
       title: "Shopify Development",
       tech: [
         "Shopify",
-        "Store Setup",
-        "Theme Customization",
         "Liquid",
+        "Theme Customization",
+        "Payment Integration",
       ],
     },
   ];
@@ -47,7 +56,9 @@ function Skills() {
     <section
       id="skills"
       className="
-      py-32
+      pt-12
+      pb-8
+      md:py-24
       bg-[#F9FBF8]
       relative
       overflow-hidden
@@ -61,28 +72,31 @@ function Skills() {
         {/* Heading */}
         <h2
           className="
-          text-5xl
-          md:text-7xl
+          text-4xl
+          md:text-6xl
+          lg:text-7xl
           font-bold
           text-gray-900
-          mb-20
+          mb-10
+          md:mb-16
           "
         >
           What I <span className="text-[#8FA684]">Work</span> With
         </h2>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
 
           {mainSkills.map((skill, index) => (
             <div
               key={index}
               className="
               bg-white
-              rounded-[28px]
+              rounded-[24px]
+              md:rounded-[28px]
               border
               border-[#E8ECE4]
-              p-6
+              p-4
               md:p-8
               hover:-translate-y-1
               hover:shadow-lg
@@ -92,11 +106,12 @@ function Skills() {
             >
               <h3
                 className="
-                text-lg
+                text-base
                 md:text-xl
                 font-semibold
                 text-gray-900
-                mb-5
+                mb-3
+                md:mb-5
                 "
               >
                 {skill.title}
@@ -107,14 +122,15 @@ function Skills() {
                   <span
                     key={i}
                     className="
-                    px-3
-                    py-2
+                    px-2.5
+                    py-1
                     rounded-full
                     bg-[#F4F7F1]
                     border
                     border-[#E8ECE4]
                     text-gray-700
-                    text-sm
+                    text-xs
+                    md:text-sm
                     "
                   >
                     {item}
@@ -129,12 +145,14 @@ function Skills() {
         {/* Tools & Platforms */}
         <div
           className="
-          mt-6
+          mt-4
+          md:mt-6
           bg-white
-          rounded-[28px]
+          rounded-[24px]
+          md:rounded-[28px]
           border
           border-[#E8ECE4]
-          p-6
+          p-4
           md:p-8
           hover:shadow-lg
           transition-all
@@ -143,11 +161,12 @@ function Skills() {
         >
           <h3
             className="
-            text-lg
+            text-base
             md:text-xl
             font-semibold
             text-gray-900
-            mb-5
+            mb-3
+            md:mb-5
             "
           >
             {tools.title}
@@ -158,14 +177,15 @@ function Skills() {
               <span
                 key={i}
                 className="
-                px-3
-                py-2
+                px-2.5
+                py-1
                 rounded-full
                 bg-[#F4F7F1]
                 border
                 border-[#E8ECE4]
                 text-gray-700
-                text-sm
+                text-xs
+                md:text-sm
                 "
               >
                 {item}
