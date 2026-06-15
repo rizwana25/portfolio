@@ -1,3 +1,11 @@
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaLinkedin,
+  FaGithub,
+  FaWhatsapp,
+} from "react-icons/fa";
+
 function Contact() {
   return (
     <section
@@ -49,122 +57,158 @@ function Contact() {
             md:p-8
             "
           >
+            <div className="space-y-5">
 
-            <div className="mb-6 md:mb-8">
-              <p
-                className="
-                text-[10px]
-                md:text-sm
-                text-[#8FA684]
-                uppercase
-                tracking-[3px]
-                mb-2
-                "
-              >
-                Email
-              </p>
-
+              {/* Email */}
               <a
                 href="mailto:fathimathrizwana761@gmail.com"
                 className="
-                text-base
-                md:text-xl
-                font-semibold
-                text-gray-900
-                break-all
+                flex
+                items-center
+                gap-4
+                p-4
+                rounded-2xl
+                bg-white
+                border
+                border-transparent
+                hover:border-[#8FA684]
+                transition
                 "
               >
-                fathimathrizwana761@gmail.com
+                <FaEnvelope className="text-[#8FA684] text-xl shrink-0" />
+
+                <div>
+                  <p className="text-xs uppercase tracking-[2px] text-gray-500">
+                    Email
+                  </p>
+
+                  <p className="font-semibold text-gray-900 break-all text-sm md:text-base">
+                    fathimathrizwana761@gmail.com
+                  </p>
+                </div>
               </a>
-            </div>
 
-            <div className="mb-6 md:mb-8">
-              <p
-                className="
-                text-[10px]
-                md:text-sm
-                text-[#8FA684]
-                uppercase
-                tracking-[3px]
-                mb-2
-                "
-              >
-                Phone
-              </p>
-
+              {/* Phone */}
               <a
                 href="tel:+918139055063"
                 className="
-                text-base
-                md:text-xl
-                font-semibold
-                text-gray-900
+                flex
+                items-center
+                gap-4
+                p-4
+                rounded-2xl
+                bg-white
+                border
+                border-transparent
+                hover:border-[#8FA684]
+                transition
                 "
               >
-                +91 81390 55063
+                <FaPhoneAlt className="text-[#8FA684] text-xl shrink-0" />
+
+                <div>
+                  <p className="text-xs uppercase tracking-[2px] text-gray-500">
+                    Phone
+                  </p>
+
+                  <p className="font-semibold text-gray-900 text-sm md:text-base">
+                    +91 81390 55063
+                  </p>
+                </div>
               </a>
-            </div>
 
-            <div className="mb-6 md:mb-8">
-              <p
-                className="
-                text-[10px]
-                md:text-sm
-                text-[#8FA684]
-                uppercase
-                tracking-[3px]
-                mb-2
-                "
-              >
-                LinkedIn
-              </p>
-
+              {/* LinkedIn */}
               <a
                 href="YOUR_LINKEDIN_URL"
                 target="_blank"
                 rel="noreferrer"
                 className="
-                text-base
-                md:text-xl
-                font-semibold
-                text-gray-900
-                hover:text-[#8FA684]
+                flex
+                items-center
+                gap-4
+                p-4
+                rounded-2xl
+                bg-white
+                border
+                border-transparent
+                hover:border-[#8FA684]
                 transition
                 "
               >
-                LinkedIn Profile
+                <FaLinkedin className="text-[#8FA684] text-xl shrink-0" />
+
+                <div>
+                  <p className="text-xs uppercase tracking-[2px] text-gray-500">
+                    LinkedIn
+                  </p>
+
+                  <p className="font-semibold text-gray-900 text-sm md:text-base">
+                    View Profile
+                  </p>
+                </div>
               </a>
-            </div>
 
-            <div>
-              <p
-                className="
-                text-[10px]
-                md:text-sm
-                text-[#8FA684]
-                uppercase
-                tracking-[3px]
-                mb-2
-                "
-              >
-                GitHub
-              </p>
-
+              {/* GitHub */}
               <a
                 href="https://github.com/rizwana25"
                 target="_blank"
                 rel="noreferrer"
                 className="
-                text-base
-                md:text-xl
-                font-semibold
-                text-gray-900
-                hover:text-[#8FA684]
+                flex
+                items-center
+                gap-4
+                p-4
+                rounded-2xl
+                bg-white
+                border
+                border-transparent
+                hover:border-[#8FA684]
                 transition
                 "
               >
-                GitHub Profile
+                <FaGithub className="text-[#8FA684] text-xl shrink-0" />
+
+                <div>
+                  <p className="text-xs uppercase tracking-[2px] text-gray-500">
+                    GitHub
+                  </p>
+
+                  <p className="font-semibold text-gray-900 text-sm md:text-base">
+                    View Repository
+                  </p>
+                </div>
               </a>
+
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/918139055063"
+                target="_blank"
+                rel="noreferrer"
+                className="
+                flex
+                items-center
+                gap-4
+                p-4
+                rounded-2xl
+                bg-[#8FA684]
+                text-white
+                hover:opacity-90
+                transition
+                "
+              >
+                <FaWhatsapp className="text-xl shrink-0" />
+
+                <div>
+                  <p className="text-xs uppercase tracking-[2px] opacity-80">
+                    WhatsApp
+                  </p>
+
+                  <p className="font-semibold">
+                    Chat With Me
+                  </p>
+                </div>
+              </a>
+
             </div>
           </div>
 
