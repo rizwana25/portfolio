@@ -2,10 +2,34 @@ import { Menu } from "lucide-react";
 
 function Navbar() {
   return (
-    <nav className="fixed top-5 left-0 w-full z-50 px-4">
-      <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-full px-8 py-4 flex items-center justify-between">
-
-        <h1 className="text-2xl font-bold text-[#6E8464]">
+    <nav className="fixed top-3 md:top-5 left-0 w-full z-50 px-3 md:px-4">
+      <div
+        className="
+        max-w-7xl
+        mx-auto
+        bg-white/95
+        backdrop-blur-sm
+        shadow-lg
+        rounded-full
+        px-5
+        md:px-8
+        py-3
+        md:py-4
+        flex
+        items-center
+        justify-between
+        "
+      >
+        <h1
+          className="
+          text-base
+          sm:text-lg
+          md:text-2xl
+          font-bold
+          text-[#6E8464]
+          truncate
+          "
+        >
           Fathimath Rizwana
         </h1>
 
@@ -21,10 +45,15 @@ function Navbar() {
           Hire Me
         </button>
 
-        <button className="md:hidden">
-          <Menu size={32} />
+        <button
+          className="
+          md:hidden
+          p-1
+          text-gray-800
+          "
+        >
+          <Menu size={26} />
         </button>
-
       </div>
     </nav>
   );
