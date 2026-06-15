@@ -331,7 +331,7 @@ function Hero() {
           />
 
           <img
-            src="/profiile.jpeg"
+            src="/profile.jpeg"
             alt="Fathimath Rizwana"
             className="
             relative
