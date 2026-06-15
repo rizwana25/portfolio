@@ -1,9 +1,8 @@
 function Hero() {
   return (
     <section
-      id="home"
       className="
-      md:min-h-screen
+      min-h-screen
       pt-32
       bg-gradient-to-br
       from-[#EEF4EA]
@@ -12,7 +11,7 @@ function Hero() {
       "
     >
       {/* MOBILE */}
-      <div className="md:hidden px-6 pb-10">
+      <div className="md:hidden px-6">
 
         {/* Image */}
         <div className="relative flex justify-center">
@@ -35,7 +34,7 @@ function Hero() {
             alt="Fathimath Rizwana"
             className="
             relative
-            w-64
+            w-72
             object-contain
             z-10
             "
@@ -43,7 +42,7 @@ function Hero() {
         </div>
 
         {/* Content */}
-        <div className="text-center mt-4">
+        <div className="text-center mt-8">
 
           <p
             className="
@@ -80,13 +79,33 @@ function Hero() {
           {/* Roles */}
           <div
             className="
-            mt-5
-            text-sm
-            font-semibold
-            text-gray-900
+            flex
+            flex-wrap
+            justify-center
+            items-center
+            mt-6
+            text-[16px]
             "
           >
-            Web • Mobile • Shopify Developer
+            <span className="font-semibold text-gray-900">
+              Web Developer
+            </span>
+
+            <span className="mx-3 text-[#CBB89A] text-lg">
+              •
+            </span>
+
+            <span className="font-semibold text-gray-900">
+              Mobile App Developer
+            </span>
+
+            <span className="mx-3 text-[#CBB89A] text-lg">
+              •
+            </span>
+
+            <span className="font-semibold text-gray-900">
+              Shopify Developer
+            </span>
           </div>
 
           <h2
@@ -116,10 +135,9 @@ function Hero() {
             reliable, and built for real-world use.
           </p>
 
-          <div className="flex gap-3 mt-8 mb-10">
+          <div className="flex gap-3 mt-8">
 
-            <a
-              href="#projects"
+            <button
               className="
               flex-1
               bg-[#8FA684]
@@ -127,16 +145,12 @@ function Hero() {
               py-3
               rounded-xl
               font-medium
-              text-center
               "
             >
               View My Work
-            </a>
+            </button>
 
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noreferrer"
+            <button
               className="
               flex-1
               border-2
@@ -145,11 +159,10 @@ function Hero() {
               py-3
               rounded-xl
               font-medium
-              text-center
               "
             >
               Resume
-            </a>
+            </button>
 
           </div>
 
@@ -207,6 +220,7 @@ function Hero() {
             Rizwana
           </h1>
 
+          {/* Roles */}
           <div
             className="
             flex
@@ -269,8 +283,7 @@ function Hero() {
 
           <div className="flex gap-4 mt-10">
 
-            <a
-              href="#projects"
+            <button
               className="
               bg-[#8FA684]
               text-white
@@ -281,12 +294,9 @@ function Hero() {
               "
             >
               View My Work
-            </a>
+            </button>
 
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noreferrer"
+            <button
               className="
               border-2
               border-[#8FA684]
@@ -298,7 +308,7 @@ function Hero() {
               "
             >
               Download Resume
-            </a>
+            </button>
 
           </div>
 
