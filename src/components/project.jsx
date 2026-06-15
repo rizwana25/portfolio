@@ -139,10 +139,12 @@ Works </span> </h2>
               src={project.image}
               alt={project.title}
               className="
-                w-full
-                h-full
-                object-cover
-              "
+  w-full
+  h-full
+  object-contain
+  md:object-cover
+  bg-[#F9FBF8]
+"
             />
           </div>
 
