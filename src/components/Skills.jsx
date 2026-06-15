@@ -38,20 +38,20 @@ function Skills() {
         "Payment Integration",
       ],
     },
+    {
+      title: "Tools & Platforms",
+      tech: [
+        "GitHub",
+        "VS Code",
+        "Google Colab",
+        "Jupyter Notebook",
+        "Render",
+        "Railway",
+      ],
+    },
   ];
 
-  const tools = {
-    title: "Tools & Platforms",
-    tech: [
-      "GitHub",
-      "VS Code",
-      "Google Colab",
-      "Jupyter Notebook",
-      "Render",
-      "Railway",
-    ],
-  };
-
+  
   return (
     <section
       id="skills"
