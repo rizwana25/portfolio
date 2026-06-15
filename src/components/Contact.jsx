@@ -2,20 +2,18 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="
-      py-32
-      bg-white
-      "
+      className="py-24 md:py-32 bg-white"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10">
 
+        {/* Heading */}
         <h2
           className="
-          text-5xl
+          text-4xl
           md:text-7xl
           font-bold
           text-gray-900
-          mb-6
+          mb-4
           "
         >
           Let's <span className="text-[#8FA684]">Work Together</span>
@@ -23,10 +21,13 @@ function Contact() {
 
         <p
           className="
-          text-lg
+          text-base
+          md:text-lg
           text-gray-600
           max-w-2xl
-          mb-16
+          mb-10
+          md:mb-16
+          leading-relaxed
           "
         >
           Have a project in mind or looking for a developer?
@@ -34,7 +35,7 @@ function Contact() {
           we can work together.
         </p>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
 
           {/* Contact Details */}
           <div
@@ -42,67 +43,129 @@ function Contact() {
             bg-[#F9FBF8]
             border
             border-[#E8ECE4]
-            rounded-[32px]
-            p-8
+            rounded-[28px]
+            md:rounded-[32px]
+            p-5
+            md:p-8
             "
           >
 
-            <div className="mb-8">
-              <p className="text-sm text-[#8FA684] uppercase tracking-[3px] mb-2">
+            <div className="mb-6 md:mb-8">
+              <p
+                className="
+                text-[10px]
+                md:text-sm
+                text-[#8FA684]
+                uppercase
+                tracking-[3px]
+                mb-2
+                "
+              >
                 Email
               </p>
 
               <a
                 href="mailto:fathimathrizwana761@gmail.com"
-                className="text-xl font-semibold text-gray-900"
+                className="
+                text-base
+                md:text-xl
+                font-semibold
+                text-gray-900
+                break-all
+                "
               >
                 fathimathrizwana761@gmail.com
               </a>
             </div>
 
-            <div className="mb-8">
-              <p className="text-sm text-[#8FA684] uppercase tracking-[3px] mb-2">
+            <div className="mb-6 md:mb-8">
+              <p
+                className="
+                text-[10px]
+                md:text-sm
+                text-[#8FA684]
+                uppercase
+                tracking-[3px]
+                mb-2
+                "
+              >
                 Phone
               </p>
 
               <a
                 href="tel:+918139055063"
-                className="text-xl font-semibold text-gray-900"
+                className="
+                text-base
+                md:text-xl
+                font-semibold
+                text-gray-900
+                "
               >
                 +91 81390 55063
               </a>
             </div>
 
-            <div className="mb-8">
-              <p className="text-sm text-[#8FA684] uppercase tracking-[3px] mb-2">
+            <div className="mb-6 md:mb-8">
+              <p
+                className="
+                text-[10px]
+                md:text-sm
+                text-[#8FA684]
+                uppercase
+                tracking-[3px]
+                mb-2
+                "
+              >
                 LinkedIn
               </p>
 
               <a
-                href="#"
+                href="YOUR_LINKEDIN_URL"
                 target="_blank"
                 rel="noreferrer"
-                className="text-xl font-semibold text-gray-900"
+                className="
+                text-base
+                md:text-xl
+                font-semibold
+                text-gray-900
+                hover:text-[#8FA684]
+                transition
+                "
               >
-                Your LinkedIn Profile
+                LinkedIn Profile
               </a>
             </div>
 
             <div>
-              <p className="text-sm text-[#8FA684] uppercase tracking-[3px] mb-2">
+              <p
+                className="
+                text-[10px]
+                md:text-sm
+                text-[#8FA684]
+                uppercase
+                tracking-[3px]
+                mb-2
+                "
+              >
                 GitHub
               </p>
 
               <a
-                href="#"
+                href="https://github.com/rizwana25"
                 target="_blank"
                 rel="noreferrer"
-                className="text-xl font-semibold text-gray-900"
+                className="
+                text-base
+                md:text-xl
+                font-semibold
+                text-gray-900
+                hover:text-[#8FA684]
+                transition
+                "
               >
-                Your GitHub Profile
+                GitHub Profile
               </a>
             </div>
-
           </div>
 
           {/* Contact Form */}
@@ -111,8 +174,10 @@ function Contact() {
             bg-[#F9FBF8]
             border
             border-[#E8ECE4]
-            rounded-[32px]
-            p-8
+            rounded-[28px]
+            md:rounded-[32px]
+            p-5
+            md:p-8
             "
           >
 
@@ -129,6 +194,7 @@ function Contact() {
                 border-[#E8ECE4]
                 bg-white
                 outline-none
+                focus:border-[#8FA684]
                 "
               />
 
@@ -143,16 +209,19 @@ function Contact() {
                 border-[#E8ECE4]
                 bg-white
                 outline-none
+                focus:border-[#8FA684]
                 "
               />
 
             </div>
 
             <textarea
-              rows="6"
+              rows="5"
               placeholder="Tell me about your project..."
               className="
               w-full
+              h-32
+              md:h-auto
               p-4
               rounded-xl
               border
@@ -160,6 +229,7 @@ function Contact() {
               bg-white
               outline-none
               resize-none
+              focus:border-[#8FA684]
               "
             />
 
