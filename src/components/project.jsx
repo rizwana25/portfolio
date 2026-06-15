@@ -5,7 +5,7 @@ function Projects() {
       category: "Shopify Store",
       description:
         "A Shopify-based e-commerce store built for a jewellery brand, focused on creating a smooth and responsive shopping experience.",
-      image: "/public/cover/naura.jpeg",
+      image: "/cover/naura.jpeg",
       tech: ["Shopify", "Liquid"],
     },
 
@@ -23,7 +23,7 @@ function Projects() {
       category: "Mobile Application",
       description:
         "What if students could report safety concerns without revealing their identity? SafeSpace combines anonymous reporting, counseling support, and campus-wide incident tracking in a single platform.",
-      image: "/public/cover/safespace.jpeg",
+      image: "/cover/safespace.jpeg",
       tech: ["Flutter", "NLP", "Node.js", "MySQL"],
     },
 
