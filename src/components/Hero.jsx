@@ -30,7 +30,7 @@ function Hero() {
           />
 
           <img
-            src="/profile.png"
+            src="/profile.jpeg"
             alt="Fathimath Rizwana"
             className="
             relative
@@ -331,7 +331,7 @@ function Hero() {
           />
 
           <img
-            src="/profiile.png"
+            src="/profiile.jpeg"
             alt="Fathimath Rizwana"
             className="
             relative
