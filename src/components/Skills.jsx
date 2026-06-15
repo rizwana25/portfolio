@@ -142,58 +142,6 @@ function Skills() {
 
         </div>
 
-        {/* Tools & Platforms */}
-        <div
-          className="
-          mt-4
-          md:mt-6
-          bg-white
-          rounded-[24px]
-          md:rounded-[28px]
-          border
-          border-[#E8ECE4]
-          p-4
-          md:p-8
-          hover:shadow-lg
-          transition-all
-          duration-300
-          "
-        >
-          <h3
-            className="
-            text-base
-            md:text-xl
-            font-semibold
-            text-gray-900
-            mb-3
-            md:mb-5
-            "
-          >
-            {tools.title}
-          </h3>
-
-          <div className="flex flex-wrap gap-2">
-            {tools.tech.map((item, i) => (
-              <span
-                key={i}
-                className="
-                px-2.5
-                py-1
-                rounded-full
-                bg-[#F4F7F1]
-                border
-                border-[#E8ECE4]
-                text-gray-700
-                text-xs
-                md:text-sm
-                "
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
       </div>
     </section>
   );
