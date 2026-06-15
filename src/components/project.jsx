@@ -126,7 +126,7 @@ Works </span> </h2>
           {/* Image */}
           <div
             className="
-              h-48
+              h-60
               md:h-64
               bg-gradient-to-br
               from-[#EEF4EA]
@@ -139,12 +139,10 @@ Works </span> </h2>
               src={project.image}
               alt={project.title}
               className="
-  w-full
-  h-full
-  object-contain
-  md:object-cover
-  bg-[#F9FBF8]
-"
+                w-full
+                h-full
+                object-cover
+              "
             />
           </div>
 
