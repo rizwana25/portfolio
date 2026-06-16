@@ -1,6 +1,13 @@
 import { FaGithub } from "react-icons/fa";
 import { X } from "lucide-react";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 function ProjectModal({ project, onClose }) {
   if (!project) return null;
 
@@ -17,7 +24,7 @@ function ProjectModal({ project, onClose }) {
       to-[#E4ECDF]
       "
     >
-      {/* Close Button */}
+      {/* Close */}
       <button
         onClick={onClose}
         className="
@@ -28,16 +35,14 @@ function ProjectModal({ project, onClose }) {
         w-12
         h-12
         rounded-full
-        bg-white/70
-        backdrop-blur-lg
+        bg-white/80
+        backdrop-blur-xl
+        shadow-lg
         border
         border-white/30
-        shadow-lg
         flex
         items-center
         justify-center
-        hover:scale-105
-        transition
         "
       >
         <X size={22} />
@@ -45,10 +50,10 @@ function ProjectModal({ project, onClose }) {
 
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-20">
 
-        {/* Hero Card */}
+        {/* Hero */}
         <div
           className="
-          bg-white/60
+          bg-white/70
           backdrop-blur-xl
           border
           border-white/30
@@ -60,7 +65,7 @@ function ProjectModal({ project, onClose }) {
         >
           <h1
             className="
-            text-5xl
+            text-4xl
             md:text-7xl
             font-black
             text-gray-900
@@ -81,7 +86,6 @@ function ProjectModal({ project, onClose }) {
             {project.tagline}
           </p>
 
-          {/* Github */}
           {project.github && (
             <a
               href={project.github}
@@ -107,7 +111,6 @@ function ProjectModal({ project, onClose }) {
             </a>
           )}
 
-          {/* Tech Stack */}
           <div className="flex flex-wrap gap-2 mt-8">
             {project.tech.map((item, index) => (
               <span
@@ -128,19 +131,81 @@ function ProjectModal({ project, onClose }) {
           </div>
         </div>
 
-        {/* Overview + What I Did */}
+        {/* Gallery */}
+        <div
+          className="
+          mt-8
+          bg-white/70
+          backdrop-blur-xl
+          border
+          border-white/30
+          rounded-[32px]
+          shadow-xl
+          p-4
+          md:p-6
+          "
+        >
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+            slidesPerView={1}
+            spaceBetween={20}
+          >
+            {project.screenshots.map((shot, index) => (
+              <SwiperSlide key={index}>
+                <div>
+
+                  <img
+                    src={shot.image}
+                    alt={shot.title}
+                    className="
+                    w-full
+                    rounded-2xl
+                    object-contain
+                    max-h-[650px]
+                    bg-white
+                    "
+                  />
+
+                  <div className="flex justify-center mt-5">
+                    <span
+                      className="
+                      px-4
+                      py-2
+                      rounded-full
+                      bg-[#EEF4EA]
+                      text-[#8FA684]
+                      text-sm
+                      font-medium
+                      "
+                    >
+                      {shot.title}
+                    </span>
+                  </div>
+
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Content Cards */}
         <div className="grid md:grid-cols-2 gap-6 mt-8">
 
           {/* Overview */}
           <div
             className="
-            bg-white/60
+            bg-white/70
             backdrop-blur-xl
             border
             border-white/30
             rounded-[28px]
             shadow-lg
             p-6
+            hover:shadow-xl
+            transition-all
+            duration-300
             "
           >
             <h2
@@ -167,13 +232,16 @@ function ProjectModal({ project, onClose }) {
           {/* What I Did */}
           <div
             className="
-            bg-white/60
+            bg-white/70
             backdrop-blur-xl
             border
             border-white/30
             rounded-[28px]
             shadow-lg
             p-6
+            hover:shadow-xl
+            transition-all
+            duration-300
             "
           >
             <h2
@@ -192,76 +260,19 @@ function ProjectModal({ project, onClose }) {
                 <li
                   key={index}
                   className="
-                  text-gray-600
                   flex
-                  items-start
                   gap-3
+                  text-gray-600
                   "
                 >
-                  <span className="text-[#8FA684]">•</span>
+                  <span className="text-[#8FA684]">
+                    •
+                  </span>
+
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
-
-        </div>
-
-        {/* Project Gallery */}
-        <div className="mt-10">
-
-          <h2
-            className="
-            text-3xl
-            font-bold
-            text-gray-900
-            mb-6
-            "
-          >
-            Project Gallery
-          </h2>
-
-          <div className="space-y-8">
-
-            {project.screenshots.map((shot, index) => (
-              <div
-                key={index}
-                className="
-                bg-white
-                rounded-[28px]
-                overflow-hidden
-                shadow-lg
-                "
-              >
-                <img
-                  src={shot.image}
-                  alt={shot.title}
-                  className="
-                  w-full
-                  object-cover
-                  "
-                />
-
-                <div className="p-5">
-
-                  <span
-                    className="
-                    inline-block
-                    px-4
-                    py-2
-                    rounded-full
-                    bg-[#EEF4EA]
-                    text-[#8FA684]
-                    text-sm
-                    font-medium
-                    "
-                  >
-                    {shot.title}
-                  </span>
-
-                </div>
-              </div>
-            ))}
           </div>
 
         </div>
