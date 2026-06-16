@@ -10,8 +10,11 @@ function ProjectModal({ project, onClose }) {
       fixed
       inset-0
       z-[9999]
-      bg-white
       overflow-y-auto
+      bg-gradient-to-br
+      from-[#EEF4EA]
+      via-[#F9FBF8]
+      to-[#E4ECDF]
       "
     >
       {/* Close Button */}
@@ -19,29 +22,42 @@ function ProjectModal({ project, onClose }) {
         onClick={onClose}
         className="
         fixed
-        top-6
-        right-6
+        top-5
+        right-5
+        z-50
         w-12
         h-12
         rounded-full
-        bg-white
+        bg-white/70
+        backdrop-blur-lg
         border
-        border-[#E8ECE4]
-        shadow-md
+        border-white/30
+        shadow-lg
         flex
         items-center
         justify-center
-        hover:bg-[#F9FBF8]
+        hover:scale-105
+        transition
         "
       >
-        <X size={24} />
+        <X size={22} />
       </button>
 
-      <div className="max-w-5xl mx-auto px-6 py-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-20">
 
-        {/* Hero */}
-        <div className="mb-16">
-
+        {/* Hero Card */}
+        <div
+          className="
+          bg-white/60
+          backdrop-blur-xl
+          border
+          border-white/30
+          rounded-[32px]
+          shadow-xl
+          p-8
+          md:p-12
+          "
+        >
           <h1
             className="
             text-5xl
@@ -55,9 +71,11 @@ function ProjectModal({ project, onClose }) {
 
           <p
             className="
-            text-xl
-            text-[#8FA684]
             mt-3
+            text-lg
+            md:text-xl
+            text-[#8FA684]
+            font-medium
             "
           >
             {project.tagline}
@@ -79,6 +97,9 @@ function ProjectModal({ project, onClose }) {
               rounded-xl
               bg-[#8FA684]
               text-white
+              font-medium
+              hover:opacity-90
+              transition
               "
             >
               <FaGithub />
@@ -105,9 +126,23 @@ function ProjectModal({ project, onClose }) {
               </span>
             ))}
           </div>
+        </div>
+
+        {/* Overview + What I Did */}
+        <div className="grid md:grid-cols-2 gap-6 mt-8">
 
           {/* Overview */}
-          <div className="mt-10">
+          <div
+            className="
+            bg-white/60
+            backdrop-blur-xl
+            border
+            border-white/30
+            rounded-[28px]
+            shadow-lg
+            p-6
+            "
+          >
             <h2
               className="
               text-2xl
@@ -130,7 +165,17 @@ function ProjectModal({ project, onClose }) {
           </div>
 
           {/* What I Did */}
-          <div className="mt-12">
+          <div
+            className="
+            bg-white/60
+            backdrop-blur-xl
+            border
+            border-white/30
+            rounded-[28px]
+            shadow-lg
+            p-6
+            "
+          >
             <h2
               className="
               text-2xl
@@ -143,34 +188,49 @@ function ProjectModal({ project, onClose }) {
             </h2>
 
             <ul className="space-y-3">
-              {project.contributions.map(
-                (item, index) => (
-                  <li
-                    key={index}
-                    className="text-gray-600"
-                  >
-                    • {item}
-                  </li>
-                )
-              )}
+              {project.contributions.map((item, index) => (
+                <li
+                  key={index}
+                  className="
+                  text-gray-600
+                  flex
+                  items-start
+                  gap-3
+                  "
+                >
+                  <span className="text-[#8FA684]">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
         </div>
 
-        {/* Screenshots */}
-        <div className="space-y-10">
+        {/* Project Gallery */}
+        <div className="mt-10">
 
-          {project.screenshots.map(
-            (shot, index) => (
+          <h2
+            className="
+            text-3xl
+            font-bold
+            text-gray-900
+            mb-6
+            "
+          >
+            Project Gallery
+          </h2>
+
+          <div className="space-y-8">
+
+            {project.screenshots.map((shot, index) => (
               <div
                 key={index}
                 className="
-                bg-[#F9FBF8]
-                border
-                border-[#E8ECE4]
+                bg-white
                 rounded-[28px]
                 overflow-hidden
+                shadow-lg
                 "
               >
                 <img
@@ -182,31 +242,27 @@ function ProjectModal({ project, onClose }) {
                   "
                 />
 
-                <div className="p-6">
+                <div className="p-5">
 
-                  <h3
+                  <span
                     className="
-                    text-xl
-                    font-semibold
-                    text-gray-900
+                    inline-block
+                    px-4
+                    py-2
+                    rounded-full
+                    bg-[#EEF4EA]
+                    text-[#8FA684]
+                    text-sm
+                    font-medium
                     "
                   >
                     {shot.title}
-                  </h3>
-
-                  <p
-                    className="
-                    mt-2
-                    text-gray-600
-                    "
-                  >
-                    {shot.description}
-                  </p>
+                  </span>
 
                 </div>
               </div>
-            )
-          )}
+            ))}
+          </div>
 
         </div>
 
