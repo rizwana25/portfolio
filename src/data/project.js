@@ -33,14 +33,14 @@ export const projectsData = [
       },
 
       {
-        image: "/projects/tracefinder2.jpg",
+        image: "/projects/tracefinder2.jpeg",
         title: "Prediction Results",
         description:
           "Displays the predicted scanner model and confidence score.",
       },
 
       {
-        image: "/projects/tracefinder3.jpg",
+        image: "/projects/tracefinder3.jpeg",
         title: "Analysis History Dashboard",
         description:
           "Stores previous analyses and allows result tracking.",
