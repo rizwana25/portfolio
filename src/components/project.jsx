@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { HiArrowRight } from "react-icons/hi";
-
+import ProjectModal from "./ProjectModal";
+import { projectsData } from "../data/project";
 function Projects() {
+const [selectedProject, setSelectedProject] = useState(null);
 const projects = [
 {
 title: "Naura Jewels",
@@ -79,7 +82,6 @@ return ( <section
 Selected{" "} <span className="text-[#8FA684]">
 Works </span> </h2>
 
-```
       <p
         className="
           mt-5
@@ -218,21 +220,30 @@ Works </span> </h2>
 
             {/* Button */}
             <div className="mt-6">
-              <button
-                className="
-                  inline-flex
-                  items-center
-                  gap-2
-                  px-5
-                  py-3
-                  bg-[#8FA684]
-                  text-white
-                  rounded-xl
-                  font-medium
-                  hover:opacity-90
-                  transition
-                "
-              >
+            <button
+  onClick={() => {
+    const projectData = projectsData.find(
+      (p) =>
+        p.title.toLowerCase() ===
+        project.title.toLowerCase()
+    );
+
+    setSelectedProject(projectData);
+  }}
+  className="
+    inline-flex
+    items-center
+    gap-2
+    px-5
+    py-3
+    bg-[#8FA684]
+    text-white
+    rounded-xl
+    font-medium
+    hover:opacity-90
+    transition
+  "
+>
                 View Project
                 <HiArrowRight />
               </button>
@@ -242,6 +253,12 @@ Works </span> </h2>
       ))}
     </div>
   </div>
+  {selectedProject && (
+  <ProjectModal
+    project={selectedProject}
+    onClose={() => setSelectedProject(null)}
+  />
+)}
 </section>
 
 );
