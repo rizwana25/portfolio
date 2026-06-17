@@ -210,5 +210,103 @@ export const projectsData = [
       ],
     },
   ],
+},
+
+{
+  id: "naura",
+
+  type: "naura",
+
+  title: "Naura Jewels",
+
+  tagline: "Luxury Jewellery E-Commerce Website",
+
+  tech: [
+    "Shopify",
+    "Liquid",
+    "HTML",
+    "CSS",
+    "JavaScript",
+  ],
+  overview:
+    "Naura Jewels is a modern jewellery e-commerce website designed to showcase collections, strengthen brand identity, and provide a seamless shopping experience across devices.",
+
+  sections: [
+    {
+      title: "Landing Page",
+      screenshots: [
+        {
+          image: "/projects/naura1.jpeg",
+          title: "Landing Page",
+        },
+      ],
+      bullets: [
+        "Introduces the brand through an elegant visual experience",
+        "Highlights featured collections and promotions",
+        "Creates a premium first impression for visitors",
+      ],
+    },
+
+    {
+      title: "Collections Showcase",
+      screenshots: [
+        {
+          image: "/projects/naura2.jpeg",
+          title: "Collections Showcase",
+        },
+      ],
+      bullets: [
+        "Presents jewellery collections in a visually engaging layout",
+        "Allows customers to browse products effortlessly",
+        "Emphasizes product imagery and brand aesthetics",
+      ],
+    },
+
+    {
+      title: "Product Details",
+
+      screenshots: [
+        {
+          image: "/projects/naura3.jpeg",
+          title: "Product Details",
+        },
+      ],
+      bullets: [
+        "Displays detailed product information and pricing",
+        "Showcases high-quality product imagery",
+        "Supports confident purchasing decisions",
+      ],
+    },
+
+    {
+      title: "Shopping Experience",
+      screenshots: [
+        {
+          image: "/projects/naura4.jpeg",
+          title: "Shopping Experience",
+        },
+      ],
+      bullets: [
+        "Provides a smooth and intuitive purchase journey",
+        "Simplifies product selection and cart management",
+        "Enhances the overall user experience",
+      ],
+    },
+
+    {
+      title: "Brand & Contact",
+      screenshots: [
+        {
+          image: "/projects/naura5.jpeg",
+          title: "Brand & Contact",
+        },
+      ],
+      bullets: [
+        "Communicates the story and identity of the brand",
+        "Builds trust through a professional presentation",
+        "Provides clear channels for customer inquiries",
+      ],
+    },
+  ],
 }
 ];

@@ -42,14 +42,14 @@ tech: ["Shopify", "Liquid"],
   tech: ["Flask", "MySQL", "HTML", "CSS", "JavaScript"],
 },
 
-{
+/*{
   title: "MyBook",
   category: "Mobile Application",
   description:
     "What if your life was a book? MyBook transforms daily journal entries into beautifully written weekly chapters and delivers them straight to your inbox.",
   image: "/projects/mybook.jpg",
   tech: ["Flutter", "MySQL", "Relay"],
-},
+},*/
 
 {
   title: "TraceFinder",
