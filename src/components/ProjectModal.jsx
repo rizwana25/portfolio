@@ -1,14 +1,15 @@
+import { useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
-import { X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 function ProjectModal({ project, onClose }) {
+  const swiperRef = useRef(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+
   if (!project) return null;
 
   return (
@@ -19,12 +20,12 @@ function ProjectModal({ project, onClose }) {
       z-[9999]
       overflow-y-auto
       bg-gradient-to-br
-      from-[#EEF4EA]
-      via-[#F9FBF8]
-      to-[#E4ECDF]
+      from-[#F8FAF7]
+      via-[#FCFDFC]
+      to-[#F4F7F2]
       "
     >
-      {/* Close */}
+      {/* Close Button */}
       <button
         onClick={onClose}
         className="
@@ -35,14 +36,15 @@ function ProjectModal({ project, onClose }) {
         w-12
         h-12
         rounded-full
-        bg-white/80
-        backdrop-blur-xl
+        bg-white
         shadow-lg
         border
-        border-white/30
+        border-[#E8ECE4]
         flex
         items-center
         justify-center
+        hover:scale-105
+        transition-all
         "
       >
         <X size={22} />
@@ -50,24 +52,24 @@ function ProjectModal({ project, onClose }) {
 
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-20">
 
-        {/* Hero */}
+        {/* HERO */}
         <div
           className="
-          bg-white/70
-          backdrop-blur-xl
-          border
-          border-white/30
+          bg-white
           rounded-[32px]
-          shadow-xl
+          border
+          border-[#E8ECE4]
+          shadow-sm
           p-8
           md:p-12
           "
         >
           <h1
             className="
-            text-4xl
+            text-5xl
             md:text-7xl
             font-black
+            tracking-tight
             text-gray-900
             "
           >
@@ -96,18 +98,20 @@ function ProjectModal({ project, onClose }) {
               items-center
               gap-2
               mt-6
-              px-5
-              py-3
-              rounded-xl
+              px-4
+              py-2.5
+              rounded-full
               bg-[#8FA684]
               text-white
+              text-sm
               font-medium
-              hover:opacity-90
-              transition
+              hover:scale-105
+              transition-all
+              duration-300
               "
             >
               <FaGithub />
-              GitHub Repository
+              GitHub
             </a>
           )}
 
@@ -131,31 +135,31 @@ function ProjectModal({ project, onClose }) {
           </div>
         </div>
 
-        {/* Gallery */}
+        {/* SCREENSHOTS */}
         <div
           className="
           mt-8
-          bg-white/70
-          backdrop-blur-xl
-          border
-          border-white/30
+          bg-white
           rounded-[32px]
-          shadow-xl
+          border
+          border-[#E8ECE4]
+          shadow-sm
+          overflow-hidden
           p-4
           md:p-6
           "
         >
           <Swiper
-            modules={[Navigation, Pagination]}
-            navigation
-            pagination={{ clickable: true }}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
             slidesPerView={1}
             spaceBetween={20}
           >
             {project.screenshots.map((shot, index) => (
               <SwiperSlide key={index}>
                 <div>
-
                   <img
                     src={shot.image}
                     alt={shot.title}
@@ -168,42 +172,110 @@ function ProjectModal({ project, onClose }) {
                     "
                   />
 
-                  <div className="flex justify-center mt-5">
+                  <div className="mt-5 flex items-center justify-center gap-5">
+                    <button
+                      type="button"
+                      onClick={() => swiperRef.current?.slidePrev()}
+                      className="
+                      w-9
+                      h-9
+                      rounded-full
+                      bg-[#8FA684]
+                      text-white
+                      shadow-sm
+                      flex
+                      items-center
+                      justify-center
+                      hover:bg-[#7F9874]
+                      transition-all
+                      "
+                      aria-label="Previous screenshot"
+                    >
+                      <ChevronLeft size={18} />
+                    </button>
+
                     <span
                       className="
+                      min-w-16
                       px-4
                       py-2
                       rounded-full
-                      bg-[#EEF4EA]
-                      text-[#8FA684]
+                      bg-gray-900
+                      text-white
                       text-sm
-                      font-medium
+                      font-semibold
+                      text-center
+                      "
+                    >
+                      {activeSlide + 1} / {project.screenshots.length}
+                    </span>
+
+                    <button
+                      type="button"
+                      onClick={() => swiperRef.current?.slideNext()}
+                      className="
+                      w-9
+                      h-9
+                      rounded-full
+                      bg-[#8FA684]
+                      text-white
+                      shadow-sm
+                      flex
+                      items-center
+                      justify-center
+                      hover:bg-[#7F9874]
+                      transition-all
+                      "
+                      aria-label="Next screenshot"
+                    >
+                      <ChevronRight size={18} />
+                    </button>
+                  </div>
+
+                  <div className="mt-5 text-center px-4 pb-8">
+                    <p
+                      className="
+                      text-sm
+                      md:text-base
+                      font-semibold
+                      text-gray-900
                       "
                     >
                       {shot.title}
-                    </span>
-                  </div>
+                    </p>
 
+                    {shot.description && (
+                      <p
+                        className="
+                        mt-1
+                        text-sm
+                        text-gray-500
+                        leading-relaxed
+                        "
+                      >
+                        {shot.description}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
 
-        {/* Content Cards */}
+        {/* CONTENT */}
         <div className="grid md:grid-cols-2 gap-6 mt-8">
 
           {/* Overview */}
           <div
             className="
-            bg-white/70
-            backdrop-blur-xl
-            border
-            border-white/30
+            bg-white
             rounded-[28px]
-            shadow-lg
-            p-6
-            hover:shadow-xl
+            border
+            border-[#E8ECE4]
+            shadow-sm
+            p-7
+            hover:shadow-md
             transition-all
             duration-300
             "
@@ -216,7 +288,7 @@ function ProjectModal({ project, onClose }) {
               mb-4
               "
             >
-              Overview
+              Project Overview
             </h2>
 
             <p
@@ -229,17 +301,16 @@ function ProjectModal({ project, onClose }) {
             </p>
           </div>
 
-          {/* What I Did */}
+          {/* Contributions */}
           <div
             className="
-            bg-white/70
-            backdrop-blur-xl
-            border
-            border-white/30
+            bg-white
             rounded-[28px]
-            shadow-lg
-            p-6
-            hover:shadow-xl
+            border
+            border-[#E8ECE4]
+            shadow-sm
+            p-7
+            hover:shadow-md
             transition-all
             duration-300
             "
@@ -252,10 +323,10 @@ function ProjectModal({ project, onClose }) {
               mb-4
               "
             >
-              What I Did
+              My Contributions
             </h2>
 
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {project.contributions.map((item, index) => (
                 <li
                   key={index}
@@ -263,9 +334,10 @@ function ProjectModal({ project, onClose }) {
                   flex
                   gap-3
                   text-gray-600
+                  leading-relaxed
                   "
                 >
-                  <span className="text-[#8FA684]">
+                  <span className="text-[#8FA684] font-bold">
                     •
                   </span>
 
