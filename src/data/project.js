@@ -63,7 +63,7 @@ export const projectsData = [
         title: "Student Module",
         screenshots: [
           {
-            image: "/cover/safespace.jpeg",
+            image: "/projects/safespace1.jpeg",
             title: "Student Module",
           },
         ],
@@ -77,7 +77,7 @@ export const projectsData = [
         title: "Administration Portal",
         screenshots: [
           {
-            image: "/cover/safespace.jpeg",
+            image: "/projects/safespace2.jpeg",
             title: "Administration Portal",
           },
         ],
@@ -91,7 +91,7 @@ export const projectsData = [
         title: "Counselling Support",
         screenshots: [
           {
-            image: "/cover/safespace.jpeg",
+            image: "/projects/safespace3.jpeg",
             title: "Counselling Support",
           },
         ],
@@ -105,7 +105,7 @@ export const projectsData = [
         title: "Campus Heatmap Analytics",
         screenshots: [
           {
-            image: "/cover/safespace.jpeg",
+            image: "/projects/safespace4.jpeg",
             title: "Campus Heatmap Analytics",
           },
         ],

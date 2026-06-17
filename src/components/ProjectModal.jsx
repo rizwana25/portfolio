@@ -59,6 +59,8 @@ function LegacyProjectShowcase({ sections }) {
                 bg-[#F8FAF7]
                 border
                 border-[#E8ECE4]
+                aspect-[4/3]
+                md:aspect-[16/9]
                 "
               >
                 <img
@@ -66,9 +68,8 @@ function LegacyProjectShowcase({ sections }) {
                   alt={section.screenshots[0].title || section.title}
                   className="
                   w-full
-                  max-h-[300px]
-                  md:max-h-[620px]
-                  object-contain
+                  h-full
+                  object-cover
                   "
                 />
               </div>
@@ -351,17 +352,19 @@ function ProjectShowcase({ sections }) {
                 ))}
               </div>
 
-              <div className="max-w-3xl mx-auto mt-6">
+              <div className="max-w-4xl mx-auto mt-6">
                 <ul
                   className="
                   space-y-3
-                  rounded-[22px]
+                  rounded-2xl
                   border
                   border-[#E8ECE4]
-                  bg-white/65
+                  bg-[#F8FAF7]/85
                   backdrop-blur
-                  px-5
-                  py-5
+                  px-4
+                  py-4
+                  md:px-6
+                  md:py-5
                   shadow-sm
                   "
                 >
@@ -370,14 +373,34 @@ function ProjectShowcase({ sections }) {
                       key={index}
                       className="
                       flex
-                      gap-3
-                      text-sm
+                      items-start
+                      gap-4
+                      rounded-xl
+                      bg-white/70
+                      px-4
+                      py-3
+                      text-[15px]
                       md:text-base
-                      text-gray-600
+                      text-gray-700
                       leading-relaxed
                       "
                     >
-                      <span className="text-[#8FA684] font-bold">
+                      <span
+                        className="
+                        mt-1
+                        flex
+                        h-5
+                        w-5
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-[#EEF4EA]
+                        text-xs
+                        text-[#8FA684]
+                        font-bold
+                        "
+                      >
                         {"\u2022"}
                       </span>
                       <span>{item}</span>
