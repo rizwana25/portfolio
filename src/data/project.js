@@ -117,4 +117,98 @@ export const projectsData = [
       },
     ],
   },
+  {
+  id: "outlinx",
+  type: "outlinx",
+
+  title: "Outlinx",
+
+  tagline: "Portfolio Website for a Graphic Design Business",
+
+  tech: [
+    "HTML",
+    "Tailwind CSS",
+    "JavaScript"
+  ],
+
+  overview:
+    "Outlinx is a portfolio website developed for a graphic design business to showcase services, creative work, and brand identity through a modern and visually engaging web experience.",
+
+  sections: [
+    {
+      title: "Landing Page",
+      screenshots: [
+        {
+          image: "/projects/out1.jpeg",
+          title: "Landing Page",
+        },
+      ],
+      bullets: [
+        "Introduces the brand through a clean and modern interface",
+        "Highlights creative services and business identity",
+        "Creates a strong first impression for potential clients",
+      ],
+    },
+
+    {
+      title: "Portfolio Showcase",
+      screenshots: [
+        {
+          image: "/projects/out2.jpeg",
+          title: "Portfolio Showcase",
+        },
+      ],
+      bullets: [
+        "Displays completed design projects in a structured layout",
+        "Highlights visual storytelling and creative work",
+        "Allows visitors to explore the designer's portfolio",
+      ],
+    },
+
+    {
+      title: "Services Section",
+      screenshots: [
+        {
+          image: "/projects/out3.jpeg",
+          title: "Services Section",
+        },
+      ],
+      bullets: [
+        "Presents available design services clearly",
+        "Organizes offerings for better user understanding",
+        "Supports potential client inquiries",
+      ],
+    },
+
+    {
+      title: "About Section",
+      screenshots: [
+        {
+          image: "/projects/out4.jpeg",
+          title: "About Section",
+        },
+      ],
+      bullets: [
+        "Communicates the brand story and mission",
+        "Builds trust through a personal introduction",
+        "Strengthens the business identity",
+      ],
+    },
+
+    {
+      title: "Contact Section",
+      screenshots: [
+        {
+          image: "/projects/out5.jpeg",
+          title: "Contact Section",
+        },
+      ],
+      bullets: [
+        "Provides multiple ways for clients to connect",
+        "Encourages inquiries and project discussions",
+        "Creates a smooth communication experience",
+      ],
+    },
+  ],
+}
 ];

@@ -20,7 +20,7 @@ tech: ["Shopify", "Liquid"],
   category: "Portfolio Website",
   description:
     "A portfolio website developed for a graphic design business to showcase services, creative work, and brand identity.",
-  image: "/cover/outlinx.png",
+  image: "/cover/outlinx.jpeg",
   tech: ["HTML", "Tailwind CSS", "JavaScript"],
 },
 

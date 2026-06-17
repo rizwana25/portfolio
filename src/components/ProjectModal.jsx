@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, ExternalLink, X } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Mousewheel } from "swiper/modules";
 
+
 import "swiper/css";
 import "swiper/css/effect-fade";
 
