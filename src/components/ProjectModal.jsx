@@ -31,10 +31,12 @@ function ProjectModal({ project, onClose }) {
         className="
         fixed
         top-5
-        right-5
+        right-4
         z-50
-        w-12
-        h-12
+        w-10
+        h-10
+        md:w-12
+        md:h-12
         rounded-full
         bg-white
         shadow-lg
@@ -47,26 +49,27 @@ function ProjectModal({ project, onClose }) {
         transition-all
         "
       >
-        <X size={22} />
+        <X size={20} />
       </button>
 
-      <div className="max-w-6xl mx-auto px-6 md:px-10 py-20">
+      <div className="max-w-6xl mx-auto px-4 md:px-10 py-10 md:py-20">
 
         {/* HERO */}
         <div
           className="
           bg-white
-          rounded-[32px]
+          rounded-[24px]
+          md:rounded-[32px]
           border
           border-[#E8ECE4]
           shadow-sm
-          p-8
+          p-6
           md:p-12
           "
         >
           <h1
             className="
-            text-5xl
+            text-4xl
             md:text-7xl
             font-black
             tracking-tight
@@ -79,7 +82,7 @@ function ProjectModal({ project, onClose }) {
           <p
             className="
             mt-3
-            text-lg
+            text-base
             md:text-xl
             text-[#8FA684]
             font-medium
@@ -140,12 +143,13 @@ function ProjectModal({ project, onClose }) {
           className="
           mt-8
           bg-white
-          rounded-[32px]
+          rounded-[24px]
+          md:rounded-[32px]
           border
           border-[#E8ECE4]
           shadow-sm
           overflow-hidden
-          p-4
+          p-3
           md:p-6
           "
         >
@@ -164,7 +168,8 @@ function ProjectModal({ project, onClose }) {
                     className="
                     relative
                     overflow-hidden
-                    rounded-2xl
+                    rounded-[18px]
+                    md:rounded-2xl
                     bg-white
                     "
                   >
@@ -174,7 +179,8 @@ function ProjectModal({ project, onClose }) {
                       className="
                       w-full
                       object-contain
-                      max-h-[650px]
+                      max-h-[260px]
+                      md:max-h-[650px]
                       "
                     />
 
@@ -183,11 +189,14 @@ function ProjectModal({ project, onClose }) {
                       onClick={() => swiperRef.current?.slidePrev()}
                       className="
                       absolute
-                      left-4
+                      left-2
+                      md:left-4
                       top-1/2
                       -translate-y-1/2
-                      w-9
-                      h-9
+                      w-8
+                      h-8
+                      md:w-9
+                      md:h-9
                       rounded-full
                       bg-white/85
                       text-[#8FA684]
@@ -203,7 +212,7 @@ function ProjectModal({ project, onClose }) {
                       "
                       aria-label="Previous screenshot"
                     >
-                      <ChevronLeft size={18} />
+                      <ChevronLeft size={17} />
                     </button>
 
                     <button
@@ -211,11 +220,14 @@ function ProjectModal({ project, onClose }) {
                       onClick={() => swiperRef.current?.slideNext()}
                       className="
                       absolute
-                      right-4
+                      right-2
+                      md:right-4
                       top-1/2
                       -translate-y-1/2
-                      w-9
-                      h-9
+                      w-8
+                      h-8
+                      md:w-9
+                      md:h-9
                       rounded-full
                       bg-white/85
                       text-[#8FA684]
@@ -231,19 +243,21 @@ function ProjectModal({ project, onClose }) {
                       "
                       aria-label="Next screenshot"
                     >
-                      <ChevronRight size={18} />
+                      <ChevronRight size={17} />
                     </button>
                   </div>
 
-                  <div className="mt-4 flex justify-center">
+                  <div className="mt-3 md:mt-4 flex justify-center">
                     <span
                       className="
                       px-3
-                      py-1.5
+                      py-1
+                      md:py-1.5
                       rounded-full
                       bg-[#EEF4EA]/80
                       text-[#6F8767]
-                      text-sm
+                      text-xs
+                      md:text-sm
                       font-semibold
                       text-center
                       border
@@ -254,10 +268,10 @@ function ProjectModal({ project, onClose }) {
                     </span>
                   </div>
 
-                  <div className="mt-4 text-center px-4 pb-8">
+                  <div className="mt-4 text-center px-2 md:px-4 pb-6 md:pb-8">
                     <p
                       className="
-                      text-sm
+                      text-base
                       md:text-base
                       font-semibold
                       text-gray-900
@@ -271,6 +285,7 @@ function ProjectModal({ project, onClose }) {
                         className="
                         mt-1
                         text-sm
+                        md:text-sm
                         text-gray-500
                         leading-relaxed
                         "
@@ -283,7 +298,8 @@ function ProjectModal({ project, onClose }) {
                   <div
                     className="
                     flex
-                    gap-3
+                    gap-2
+                    md:gap-3
                     overflow-x-auto
                     px-1
                     pb-2
@@ -297,7 +313,7 @@ function ProjectModal({ project, onClose }) {
                         onClick={() => swiperRef.current?.slideTo(thumbIndex)}
                         className={`
                         shrink-0
-                        w-24
+                        w-20
                         md:w-32
                         aspect-[4/3]
                         overflow-hidden
