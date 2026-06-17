@@ -8,7 +8,8 @@ import { Autoplay, EffectFade, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
-function ProjectShowcase({ sections }) {
+/*
+function LegacyProjectShowcase({ sections }) {
   const showcaseRef = useRef(null);
   const [activeSection, setActiveSection] = useState(0);
 
@@ -149,6 +150,245 @@ function ProjectShowcase({ sections }) {
           />
         ))}
       </div>
+    </div>
+  );
+}
+
+*/
+function ProjectShowcase({ sections }) {
+  const showcaseRef = useRef(null);
+  const [activeSection, setActiveSection] = useState(0);
+
+  return (
+    <div
+      className="
+      mt-8
+      bg-white
+      rounded-[24px]
+      md:rounded-[32px]
+      border
+      border-[#E8ECE4]
+      shadow-sm
+      p-4
+      md:p-6
+      "
+    >
+      <Swiper
+        modules={[Autoplay, EffectFade, Mousewheel]}
+        onSwiper={(swiper) => {
+          showcaseRef.current = swiper;
+        }}
+        onSlideChange={(swiper) => setActiveSection(swiper.realIndex)}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
+        autoplay={{
+          delay: 3600,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        mousewheel={{
+          forceToAxis: true,
+          sensitivity: 0.8,
+        }}
+        loop={sections.length > 1}
+        speed={550}
+        slidesPerView={1}
+      >
+        {sections.map((section) => (
+          <SwiperSlide key={section.title}>
+            <div>
+              <h2
+                className="
+                text-2xl
+                md:text-4xl
+                font-bold
+                text-gray-900
+                text-center
+                mb-5
+                "
+              >
+                {section.title}
+              </h2>
+
+              <div
+                className="
+                overflow-hidden
+                rounded-[18px]
+                md:rounded-2xl
+                bg-[#F8FAF7]
+                border
+                border-[#E8ECE4]
+                "
+              >
+                <img
+                  src={section.screenshots[0].image}
+                  alt={section.screenshots[0].title || section.title}
+                  className="
+                  w-full
+                  max-h-[300px]
+                  md:max-h-[620px]
+                  object-contain
+                  "
+                />
+              </div>
+
+              <div className="mt-4 flex items-center justify-center gap-4">
+                <button
+                  type="button"
+                  onClick={() => showcaseRef.current?.slidePrev()}
+                  className="
+                  flex
+                  w-8
+                  h-8
+                  md:w-9
+                  md:h-9
+                  rounded-full
+                  bg-white
+                  text-[#8FA684]
+                  shadow-sm
+                  border
+                  border-[#E8ECE4]
+                  items-center
+                  justify-center
+                  hover:bg-[#F8FAF7]
+                  transition-all
+                  "
+                  aria-label="Previous SafeSpace module"
+                >
+                  <ChevronLeft size={17} />
+                </button>
+
+                <span
+                  className="
+                  px-3
+                  py-1
+                  md:py-1.5
+                  rounded-full
+                  bg-[#EEF4EA]/80
+                  text-[#6F8767]
+                  text-xs
+                  md:text-sm
+                  font-semibold
+                  text-center
+                  border
+                  border-[#E8ECE4]
+                  "
+                >
+                  {activeSection + 1} / {sections.length}
+                </span>
+
+                <button
+                  type="button"
+                  onClick={() => showcaseRef.current?.slideNext()}
+                  className="
+                  flex
+                  w-8
+                  h-8
+                  md:w-9
+                  md:h-9
+                  rounded-full
+                  bg-white
+                  text-[#8FA684]
+                  shadow-sm
+                  border
+                  border-[#E8ECE4]
+                  items-center
+                  justify-center
+                  hover:bg-[#F8FAF7]
+                  transition-all
+                  "
+                  aria-label="Next SafeSpace module"
+                >
+                  <ChevronRight size={17} />
+                </button>
+              </div>
+
+              <div
+                className="
+                flex
+                gap-2
+                md:gap-3
+                overflow-x-auto
+                mt-5
+                px-1
+                pb-2
+                "
+                aria-label="SafeSpace module gallery"
+              >
+                {sections.map((thumb, index) => (
+                  <button
+                    key={thumb.title}
+                    type="button"
+                    onClick={() => showcaseRef.current?.slideToLoop(index)}
+                    className={`
+                    shrink-0
+                    w-24
+                    md:w-36
+                    aspect-[4/3]
+                    overflow-hidden
+                    rounded-xl
+                    border-2
+                    bg-white
+                    transition-all
+                    ${
+                      activeSection === index
+                        ? "border-[#8FA684] shadow-md"
+                        : "border-[#E8ECE4] opacity-70 hover:opacity-100"
+                    }
+                    `}
+                    aria-label={`Show ${thumb.title}`}
+                  >
+                    <img
+                      src={thumb.screenshots[0].image}
+                      alt=""
+                      className="
+                      w-full
+                      h-full
+                      object-cover
+                      "
+                    />
+                  </button>
+                ))}
+              </div>
+
+              <div className="max-w-3xl mx-auto mt-6">
+                <ul
+                  className="
+                  space-y-3
+                  rounded-[22px]
+                  border
+                  border-[#E8ECE4]
+                  bg-white/65
+                  backdrop-blur
+                  px-5
+                  py-5
+                  shadow-sm
+                  "
+                >
+                  {section.bullets.map((item, index) => (
+                    <li
+                      key={index}
+                      className="
+                      flex
+                      gap-3
+                      text-sm
+                      md:text-base
+                      text-gray-600
+                      leading-relaxed
+                      "
+                    >
+                      <span className="text-[#8FA684] font-bold">
+                        {"\u2022"}
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }
