@@ -160,33 +160,45 @@ function ProjectModal({ project, onClose }) {
             {project.screenshots.map((shot, index) => (
               <SwiperSlide key={index}>
                 <div>
-                  <img
-                    src={shot.image}
-                    alt={shot.title}
+                  <div
                     className="
-                    w-full
+                    relative
+                    overflow-hidden
                     rounded-2xl
-                    object-contain
-                    max-h-[650px]
                     bg-white
                     "
-                  />
+                  >
+                    <img
+                      src={shot.image}
+                      alt={shot.title}
+                      className="
+                      w-full
+                      object-contain
+                      max-h-[650px]
+                      "
+                    />
 
-                  <div className="mt-5 flex items-center justify-center gap-5">
                     <button
                       type="button"
                       onClick={() => swiperRef.current?.slidePrev()}
                       className="
+                      absolute
+                      left-4
+                      top-1/2
+                      -translate-y-1/2
                       w-9
                       h-9
                       rounded-full
-                      bg-[#8FA684]
-                      text-white
-                      shadow-sm
+                      bg-white/85
+                      text-[#8FA684]
+                      shadow-md
+                      border
+                      border-white/70
+                      backdrop-blur
                       flex
                       items-center
                       justify-center
-                      hover:bg-[#7F9874]
+                      hover:bg-white
                       transition-all
                       "
                       aria-label="Previous screenshot"
@@ -194,36 +206,27 @@ function ProjectModal({ project, onClose }) {
                       <ChevronLeft size={18} />
                     </button>
 
-                    <span
-                      className="
-                      min-w-16
-                      px-4
-                      py-2
-                      rounded-full
-                      bg-gray-900
-                      text-white
-                      text-sm
-                      font-semibold
-                      text-center
-                      "
-                    >
-                      {activeSlide + 1} / {project.screenshots.length}
-                    </span>
-
                     <button
                       type="button"
                       onClick={() => swiperRef.current?.slideNext()}
                       className="
+                      absolute
+                      right-4
+                      top-1/2
+                      -translate-y-1/2
                       w-9
                       h-9
                       rounded-full
-                      bg-[#8FA684]
-                      text-white
-                      shadow-sm
+                      bg-white/85
+                      text-[#8FA684]
+                      shadow-md
+                      border
+                      border-white/70
+                      backdrop-blur
                       flex
                       items-center
                       justify-center
-                      hover:bg-[#7F9874]
+                      hover:bg-white
                       transition-all
                       "
                       aria-label="Next screenshot"
@@ -232,7 +235,26 @@ function ProjectModal({ project, onClose }) {
                     </button>
                   </div>
 
-                  <div className="mt-5 text-center px-4 pb-8">
+                  <div className="mt-4 flex justify-center">
+                    <span
+                      className="
+                      px-3
+                      py-1.5
+                      rounded-full
+                      bg-[#EEF4EA]/80
+                      text-[#6F8767]
+                      text-sm
+                      font-semibold
+                      text-center
+                      border
+                      border-[#E8ECE4]
+                      "
+                    >
+                      {activeSlide + 1} / {project.screenshots.length}
+                    </span>
+                  </div>
+
+                  <div className="mt-4 text-center px-4 pb-8">
                     <p
                       className="
                       text-sm
@@ -256,6 +278,52 @@ function ProjectModal({ project, onClose }) {
                         {shot.description}
                       </p>
                     )}
+                  </div>
+
+                  <div
+                    className="
+                    flex
+                    gap-3
+                    overflow-x-auto
+                    px-1
+                    pb-2
+                    "
+                    aria-label="Screenshot gallery"
+                  >
+                    {project.screenshots.map((thumb, thumbIndex) => (
+                      <button
+                        key={thumb.image}
+                        type="button"
+                        onClick={() => swiperRef.current?.slideTo(thumbIndex)}
+                        className={`
+                        shrink-0
+                        w-24
+                        md:w-32
+                        aspect-[4/3]
+                        overflow-hidden
+                        rounded-xl
+                        border-2
+                        bg-white
+                        transition-all
+                        ${
+                          activeSlide === thumbIndex
+                            ? "border-[#8FA684] shadow-md"
+                            : "border-[#E8ECE4] opacity-70 hover:opacity-100"
+                        }
+                        `}
+                        aria-label={`Show screenshot ${thumbIndex + 1}`}
+                      >
+                        <img
+                          src={thumb.image}
+                          alt=""
+                          className="
+                          w-full
+                          h-full
+                          object-cover
+                          "
+                        />
+                      </button>
+                    ))}
                   </div>
                 </div>
               </SwiperSlide>
