@@ -3,6 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Mousewheel } from "swiper/modules";
 
 import "swiper/css";
 
@@ -154,10 +155,22 @@ function ProjectModal({ project, onClose }) {
           "
         >
           <Swiper
+            modules={[Autoplay, Mousewheel]}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
-            onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
+            onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
+            autoplay={{
+              delay: 3200,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            mousewheel={{
+              forceToAxis: true,
+              sensitivity: 0.8,
+            }}
+            loop={project.screenshots.length > 1}
+            speed={450}
             slidesPerView={1}
             spaceBetween={20}
           >
@@ -354,7 +367,9 @@ function ProjectModal({ project, onClose }) {
                       <button
                         key={thumb.image}
                         type="button"
-                        onClick={() => swiperRef.current?.slideTo(thumbIndex)}
+                        onClick={() =>
+                          swiperRef.current?.slideToLoop(thumbIndex)
+                        }
                         className={`
                         shrink-0
                         w-20
