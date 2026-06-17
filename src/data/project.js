@@ -4,7 +4,7 @@ export const projectsData = [
     title: "TraceFinder",
     tagline: "AI-Powered Scanner Identification System",
 
-    github: "https://github.com/YOUR_USERNAME/tracefinder",
+    github: "https://github.com/AI-TraceFinder/AI-TraceFinder-Fathimath-Rizwana-.git",
 
     tech: [
       "Python",

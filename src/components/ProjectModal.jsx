@@ -188,8 +188,9 @@ function ProjectModal({ project, onClose }) {
                       type="button"
                       onClick={() => swiperRef.current?.slidePrev()}
                       className="
+                      hidden
+                      md:flex
                       absolute
-                      left-2
                       md:left-4
                       top-1/2
                       -translate-y-1/2
@@ -204,7 +205,6 @@ function ProjectModal({ project, onClose }) {
                       border
                       border-white/70
                       backdrop-blur
-                      flex
                       items-center
                       justify-center
                       hover:bg-white
@@ -219,8 +219,9 @@ function ProjectModal({ project, onClose }) {
                       type="button"
                       onClick={() => swiperRef.current?.slideNext()}
                       className="
+                      hidden
+                      md:flex
                       absolute
-                      right-2
                       md:right-4
                       top-1/2
                       -translate-y-1/2
@@ -235,7 +236,6 @@ function ProjectModal({ project, onClose }) {
                       border
                       border-white/70
                       backdrop-blur
-                      flex
                       items-center
                       justify-center
                       hover:bg-white
@@ -247,7 +247,29 @@ function ProjectModal({ project, onClose }) {
                     </button>
                   </div>
 
-                  <div className="mt-3 md:mt-4 flex justify-center">
+                  <div className="mt-3 md:mt-4 flex items-center justify-center gap-4">
+                    <button
+                      type="button"
+                      onClick={() => swiperRef.current?.slidePrev()}
+                      className="
+                      flex
+                      md:hidden
+                      w-8
+                      h-8
+                      rounded-full
+                      bg-white
+                      text-[#8FA684]
+                      shadow-sm
+                      border
+                      border-[#E8ECE4]
+                      items-center
+                      justify-center
+                      "
+                      aria-label="Previous screenshot"
+                    >
+                      <ChevronLeft size={17} />
+                    </button>
+
                     <span
                       className="
                       px-3
@@ -266,6 +288,28 @@ function ProjectModal({ project, onClose }) {
                     >
                       {activeSlide + 1} / {project.screenshots.length}
                     </span>
+
+                    <button
+                      type="button"
+                      onClick={() => swiperRef.current?.slideNext()}
+                      className="
+                      flex
+                      md:hidden
+                      w-8
+                      h-8
+                      rounded-full
+                      bg-white
+                      text-[#8FA684]
+                      shadow-sm
+                      border
+                      border-[#E8ECE4]
+                      items-center
+                      justify-center
+                      "
+                      aria-label="Next screenshot"
+                    >
+                      <ChevronRight size={17} />
+                    </button>
                   </div>
 
                   <div className="mt-4 text-center px-2 md:px-4 pb-6 md:pb-8">
@@ -407,7 +451,7 @@ function ProjectModal({ project, onClose }) {
               mb-4
               "
             >
-              My Contributions
+              What I Did
             </h2>
 
             <ul className="space-y-4">
