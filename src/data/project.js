@@ -47,4 +47,74 @@ export const projectsData = [
       },
     ],
   },
+
+  {
+    id: "safespace",
+    title: "SafeSpace",
+    tagline: "Anonymous Campus Safety & Support Platform",
+
+    tech: ["Flutter", "Node.js", "MySQL", "NLP", "Machine Learning"],
+
+    overview:
+      "SafeSpace is an anonymous reporting platform designed to improve campus safety by enabling students to report incidents and seek counselling support without revealing their identity. The platform combines secure communication, role-based access, NLP-based report analysis, and campus analytics to help institutions respond to safety concerns more effectively.",
+
+    sections: [
+      {
+        title: "Student Module",
+        screenshots: [
+          {
+            image: "/cover/safespace.jpeg",
+            title: "Student Module",
+          },
+        ],
+        bullets: [
+          "Report incidents anonymously",
+          "Attach media and supporting evidence",
+          "Request counselling and track report status",
+        ],
+      },
+      {
+        title: "Administration Portal",
+        screenshots: [
+          {
+            image: "/cover/safespace.jpeg",
+            title: "Administration Portal",
+          },
+        ],
+        bullets: [
+          "Access reports categorized by NLP-based analysis",
+          "Manage incident cases and counselling approvals",
+          "Conduct anonymous follow-ups while maintaining confidentiality",
+        ],
+      },
+      {
+        title: "Counselling Support",
+        screenshots: [
+          {
+            image: "/cover/safespace.jpeg",
+            title: "Counselling Support",
+          },
+        ],
+        bullets: [
+          "Access and manage assigned counselling cases",
+          "Communicate anonymously with students through secure messaging",
+          "Provide confidential support throughout the resolution process",
+        ],
+      },
+      {
+        title: "Campus Heatmap Analytics",
+        screenshots: [
+          {
+            image: "/cover/safespace.jpeg",
+            title: "Campus Heatmap Analytics",
+          },
+        ],
+        bullets: [
+          "Visualize incident-prone locations across the campus",
+          "Identify reporting trends and recurring safety concerns",
+          "Support informed decision-making through data-driven insights",
+        ],
+      },
+    ],
+  },
 ];

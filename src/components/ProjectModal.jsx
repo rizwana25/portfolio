@@ -1,11 +1,157 @@
 import { useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink, X } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Mousewheel } from "swiper/modules";
+import { Autoplay, EffectFade, Mousewheel } from "swiper/modules";
 
 import "swiper/css";
+import "swiper/css/effect-fade";
+
+function ProjectShowcase({ sections }) {
+  const showcaseRef = useRef(null);
+  const [activeSection, setActiveSection] = useState(0);
+
+  return (
+    <div
+      className="
+      mt-8
+      bg-white
+      rounded-[24px]
+      md:rounded-[32px]
+      border
+      border-[#E8ECE4]
+      shadow-sm
+      p-4
+      md:p-6
+      "
+    >
+      <Swiper
+        modules={[Autoplay, EffectFade, Mousewheel]}
+        onSwiper={(swiper) => {
+          showcaseRef.current = swiper;
+        }}
+        onSlideChange={(swiper) => setActiveSection(swiper.realIndex)}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
+        autoplay={{
+          delay: 3600,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        mousewheel={{
+          forceToAxis: true,
+          sensitivity: 0.8,
+        }}
+        loop={sections.length > 1}
+        speed={550}
+        slidesPerView={1}
+      >
+        {sections.map((section) => (
+          <SwiperSlide key={section.title}>
+            <div>
+              <div
+                className="
+                overflow-hidden
+                rounded-[18px]
+                md:rounded-2xl
+                bg-[#F8FAF7]
+                border
+                border-[#E8ECE4]
+                "
+              >
+                <img
+                  src={section.screenshots[0].image}
+                  alt={section.screenshots[0].title || section.title}
+                  className="
+                  w-full
+                  max-h-[300px]
+                  md:max-h-[620px]
+                  object-contain
+                  "
+                />
+              </div>
+
+              <div className="max-w-3xl mx-auto text-center mt-7 md:mt-8">
+                <h2
+                  className="
+                  text-2xl
+                  md:text-4xl
+                  font-bold
+                  text-gray-900
+                  "
+                >
+                  {section.title}
+                </h2>
+
+                <ul
+                  className="
+                  mt-5
+                  grid
+                  gap-3
+                  text-left
+                  md:grid-cols-3
+                  "
+                >
+                  {section.bullets.map((item, index) => (
+                    <li
+                      key={index}
+                      className="
+                      rounded-2xl
+                      bg-[#F8FAF7]
+                      border
+                      border-[#E8ECE4]
+                      px-4
+                      py-3
+                      text-sm
+                      text-gray-600
+                      leading-relaxed
+                      "
+                    >
+                      <span className="text-[#8FA684] font-bold">• </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <div
+        className="
+        mt-7
+        flex
+        flex-wrap
+        items-center
+        justify-center
+        gap-2
+        "
+        aria-label="SafeSpace showcase pagination"
+      >
+        {sections.map((section, index) => (
+          <button
+            key={section.title}
+            type="button"
+            onClick={() => showcaseRef.current?.slideToLoop(index)}
+            className={`
+            h-2
+            rounded-full
+            transition-all
+            ${
+              activeSection === index
+                ? "w-8 bg-[#8FA684]"
+                : "w-2 bg-[#DDE6D8] hover:bg-[#B9C9B1]"
+            }
+            `}
+            aria-label={`Show ${section.title}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function ProjectModal({ project, onClose }) {
   const swiperRef = useRef(null);
@@ -116,6 +262,7 @@ function ProjectModal({ project, onClose }) {
             >
               <FaGithub />
               GitHub
+              <ExternalLink size={14} />
             </a>
           )}
 
@@ -139,6 +286,48 @@ function ProjectModal({ project, onClose }) {
           </div>
         </div>
 
+        {project.sections ? (
+          <>
+            <div
+              className="
+              mt-8
+              bg-white
+              rounded-[24px]
+              md:rounded-[32px]
+              border
+              border-[#E8ECE4]
+              shadow-sm
+              p-6
+              md:p-8
+              "
+            >
+              <h2
+                className="
+                text-2xl
+                md:text-3xl
+                font-bold
+                text-gray-900
+                mb-4
+                "
+              >
+                Project Overview
+              </h2>
+
+              <p
+                className="
+                text-gray-600
+                leading-relaxed
+                md:text-lg
+                "
+              >
+                {project.overview}
+              </p>
+            </div>
+
+            <ProjectShowcase sections={project.sections} />
+          </>
+        ) : (
+          <>
         {/* SCREENSHOTS */}
         <div
           className="
@@ -491,6 +680,8 @@ function ProjectModal({ project, onClose }) {
           </div>
 
         </div>
+          </>
+        )}
 
       </div>
     </div>
