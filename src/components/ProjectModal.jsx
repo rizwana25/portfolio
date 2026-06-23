@@ -914,21 +914,6 @@ function ProjectModal({ project, onClose }) {
           </Swiper>
         </div>
 
-        {false && project.contributions && (
-          <div>
-            <ul>
-              {project.contributions.map((item, index) => (
-                <li key={index}>
-                  <span className="text-[#8FA684] font-bold">
-                    •
-                  </span>
-
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
           </>
         )}
 
