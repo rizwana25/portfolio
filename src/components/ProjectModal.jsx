@@ -353,20 +353,12 @@ function ProjectShowcase({ sections }) {
                 ))}
               </div>
 
-              <div className="max-w-4xl mx-auto mt-6">
+              <div className="max-w-5xl mx-auto mt-6">
                 <ul
                   className="
-                  space-y-3
-                  rounded-2xl
-                  border
-                  border-[#E8ECE4]
-                  bg-[#F8FAF7]/85
-                  backdrop-blur
-                  px-4
-                  py-4
-                  md:px-6
-                  md:py-5
-                  shadow-sm
+                  grid
+                  gap-3
+                  md:grid-cols-3
                   "
                 >
                   {section.bullets.map((item, index) => (
@@ -375,35 +367,32 @@ function ProjectShowcase({ sections }) {
                       className="
                       flex
                       items-start
-                      gap-4
-                      rounded-xl
-                      bg-white/70
-                      px-4
-                      py-3
+                      gap-3
+                      rounded-[22px]
+                      bg-[#8FA684]
+                      px-5
+                      py-4
+                      text-white
+                      shadow-sm
+                      hover:scale-[1.02]
+                      transition-all
+                      duration-300
                       text-[15px]
-                      md:text-base
-                      text-gray-700
+                      font-medium
                       leading-relaxed
                       "
                     >
                       <span
                         className="
-                        mt-1
+                        mt-2
                         flex
-                        h-5
-                        w-5
+                        h-1.5
+                        w-1.5
                         shrink-0
-                        items-center
-                        justify-center
                         rounded-full
-                        bg-[#EEF4EA]
-                        text-xs
-                        text-[#8FA684]
-                        font-bold
+                        bg-white
                         "
-                      >
-                        {"\u2022"}
-                      </span>
+                      />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -503,7 +492,7 @@ function ProjectModal({ project, onClose }) {
           </p>
 
           {(project.live || project.github) && (
-            <div className="flex flex-wrap gap-3 mt-6">
+            <div className="flex flex-row flex-nowrap gap-3 mt-6">
               {project.live && (
                 <a
                   href={project.live}
@@ -520,6 +509,7 @@ function ProjectModal({ project, onClose }) {
                   text-white
                   text-sm
                   font-medium
+                  whitespace-nowrap
                   hover:scale-105
                   transition-all
                   duration-300
@@ -546,13 +536,14 @@ function ProjectModal({ project, onClose }) {
                   text-white
                   text-sm
                   font-medium
+                  whitespace-nowrap
                   hover:scale-105
                   transition-all
                   duration-300
                   "
                 >
                   <FaGithub />
-                  GitHub Repository
+                  GitHub
                   <ExternalLink size={14} />
                 </a>
               )}
@@ -584,11 +575,9 @@ function ProjectModal({ project, onClose }) {
             <div
               className="
               mt-8
-              bg-white
+              bg-[#8FA684]
               rounded-[24px]
               md:rounded-[32px]
-              border
-              border-[#E8ECE4]
               shadow-sm
               p-6
               md:p-8
@@ -599,7 +588,7 @@ function ProjectModal({ project, onClose }) {
                 text-2xl
                 md:text-3xl
                 font-bold
-                text-gray-900
+                text-white
                 mb-4
                 "
               >
@@ -608,9 +597,10 @@ function ProjectModal({ project, onClose }) {
 
               <p
                 className="
-                text-gray-600
+                text-white
                 leading-relaxed
                 md:text-lg
+                font-medium
                 "
               >
                 {project.overview}
@@ -621,6 +611,42 @@ function ProjectModal({ project, onClose }) {
           </>
         ) : (
           <>
+        {/* Overview */}
+        <div
+          className="
+          mt-8
+          bg-[#8FA684]
+          rounded-[24px]
+          md:rounded-[32px]
+          shadow-sm
+          p-6
+          md:p-8
+          "
+        >
+          <h2
+            className="
+            text-2xl
+            md:text-3xl
+            font-bold
+            text-white
+            mb-4
+            "
+          >
+            Project Overview
+          </h2>
+
+          <p
+            className="
+            text-white
+            leading-relaxed
+            md:text-lg
+            font-medium
+            "
+          >
+            {project.overview}
+          </p>
+        </div>
+
         {/* SCREENSHOTS */}
         <div
           className="
@@ -888,80 +914,11 @@ function ProjectModal({ project, onClose }) {
           </Swiper>
         </div>
 
-        {/* CONTENT */}
-        <div className="grid md:grid-cols-2 gap-6 mt-8">
-
-          {/* Overview */}
-          <div
-            className="
-            bg-white
-            rounded-[28px]
-            border
-            border-[#E8ECE4]
-            shadow-sm
-            p-7
-            hover:shadow-md
-            transition-all
-            duration-300
-            "
-          >
-            <h2
-              className="
-              text-2xl
-              font-bold
-              text-gray-900
-              mb-4
-              "
-            >
-              Project Overview
-            </h2>
-
-            <p
-              className="
-              text-gray-600
-              leading-relaxed
-              "
-            >
-              {project.overview}
-            </p>
-          </div>
-
-          {/* Contributions */}
-          <div
-            className="
-            bg-white
-            rounded-[28px]
-            border
-            border-[#E8ECE4]
-            shadow-sm
-            p-7
-            hover:shadow-md
-            transition-all
-            duration-300
-            "
-          >
-            <h2
-              className="
-              text-2xl
-              font-bold
-              text-gray-900
-              mb-4
-              "
-            >
-              What I Did
-            </h2>
-
-            <ul className="space-y-4">
+        {false && project.contributions && (
+          <div>
+            <ul>
               {project.contributions.map((item, index) => (
-                <li
-                  key={index}
-                  className="
-                  flex
-                  gap-3
-                  text-gray-600
-                  leading-relaxed
-                  "
-                >
+                <li key={index}>
                   <span className="text-[#8FA684] font-bold">
                     •
                   </span>
@@ -971,8 +928,7 @@ function ProjectModal({ project, onClose }) {
               ))}
             </ul>
           </div>
-
-        </div>
+        )}
           </>
         )}
 

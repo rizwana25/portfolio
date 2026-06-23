@@ -240,21 +240,20 @@ export const projectsData = [
       ],
     },
 
-    {
-      title: "Portfolio Showcase",
+     {
+      title: "About Section",
       screenshots: [
         {
-          image: "/projects/out2.jpeg",
-          title: "Portfolio Showcase",
+          image: "/projects/out4.jpeg",
+          title: "About Section",
         },
       ],
       bullets: [
-        "Displays completed design projects in a structured layout",
-        "Highlights visual storytelling and creative work",
-        "Allows visitors to explore the designer's portfolio",
+        "Communicates the brand story and mission",
+        "Builds trust through a personal introduction",
+        "Strengthens the business identity",
       ],
     },
-
     {
       title: "Services Section",
       screenshots: [
@@ -270,20 +269,7 @@ export const projectsData = [
       ],
     },
 
-    {
-      title: "About Section",
-      screenshots: [
-        {
-          image: "/projects/out4.jpeg",
-          title: "About Section",
-        },
-      ],
-      bullets: [
-        "Communicates the brand story and mission",
-        "Builds trust through a personal introduction",
-        "Strengthens the business identity",
-      ],
-    },
+   
 
     {
       title: "Contact Section",
