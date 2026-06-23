@@ -502,32 +502,61 @@ function ProjectModal({ project, onClose }) {
             {project.tagline}
           </p>
 
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noreferrer"
-              className="
-              inline-flex
-              items-center
-              gap-2
-              mt-6
-              px-4
-              py-2.5
-              rounded-full
-              bg-[#8FA684]
-              text-white
-              text-sm
-              font-medium
-              hover:scale-105
-              transition-all
-              duration-300
-              "
-            >
-              <FaGithub />
-              GitHub
-              <ExternalLink size={14} />
-            </a>
+          {(project.live || project.github) && (
+            <div className="flex flex-wrap gap-3 mt-6">
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  px-4
+                  py-2.5
+                  rounded-full
+                  bg-[#8FA684]
+                  text-white
+                  text-sm
+                  font-medium
+                  hover:scale-105
+                  transition-all
+                  duration-300
+                  "
+                >
+                  Live Demo
+                  <ExternalLink size={14} />
+                </a>
+              )}
+
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  px-4
+                  py-2.5
+                  rounded-full
+                  bg-[#8FA684]
+                  text-white
+                  text-sm
+                  font-medium
+                  hover:scale-105
+                  transition-all
+                  duration-300
+                  "
+                >
+                  <FaGithub />
+                  GitHub Repository
+                  <ExternalLink size={14} />
+                </a>
+              )}
+            </div>
           )}
 
           <div className="flex flex-wrap gap-2 mt-8">

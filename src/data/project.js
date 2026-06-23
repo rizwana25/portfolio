@@ -53,6 +53,8 @@ export const projectsData = [
     title: "SafeSpace",
     tagline: "Anonymous Campus Safety & Support Platform",
 
+    github: "https://github.com/rizwana25/safespace",
+
     tech: ["Flutter", "Node.js", "MySQL", "NLP", "Machine Learning"],
 
     overview:
@@ -118,12 +120,100 @@ export const projectsData = [
     ],
   },
   {
+    id: "carbon-footprint-tracker",
+    title: "Carbon Footprint Tracker",
+    tagline: "Web Application for Sustainable Habit Tracking",
+
+    github: "https://github.com/rizwana25/carbon-footprint-tracker",
+
+    tech: ["Flask", "MySQL", "HTML", "CSS", "JavaScript"],
+
+    overview:
+      "A web application that helps users understand their environmental impact by tracking daily carbon emissions, providing personalized insights, and encouraging sustainable habits through community-driven challenges.",
+
+    sections: [
+      {
+        title: "Dashboard & Authentication",
+        screenshots: [
+          {
+            image: "/projects/carbon1.jpeg",
+            title: "Dashboard & Authentication",
+          },
+        ],
+        bullets: [
+          "Secure user registration and login system",
+          "Personalized dashboard displaying carbon footprint insights",
+          "Track environmental impact through an intuitive interface",
+        ],
+      },
+      {
+        title: "Carbon Footprint Calculator",
+        screenshots: [
+          {
+            image: "/projects/carbon2.png",
+            title: "Carbon Footprint Calculator",
+          },
+        ],
+        bullets: [
+          "Calculate emissions from energy consumption, transportation, and waste generation",
+          "Generate footprint estimates using user-provided activity data",
+          "Provide real-time feedback on environmental impact",
+        ],
+      },
+      {
+        title: "Reports & Insights",
+        screenshots: [
+          {
+            image: "/projects/carbon3.jpeg",
+            title: "Reports & Insights",
+          },
+        ],
+        bullets: [
+          "Generate detailed carbon footprint reports",
+          "Visualize emission breakdowns across different categories",
+          "Deliver personalized recommendations for reducing carbon impact",
+        ],
+      },
+      {
+        title: "Community Engagement",
+        screenshots: [
+          {
+            image: "/projects/carbon4.jpeg",
+            title: "Community Engagement",
+          },
+        ],
+        bullets: [
+          "Participate in community-based sustainability initiatives",
+          "Compare progress through rankings and shared achievements",
+          "Encourage collective action toward environmental goals",
+        ],
+      },
+      {
+        title: "Sustainability Challenges",
+        screenshots: [
+          {
+            image: "/projects/carbon5.jpeg",
+            title: "Sustainability Challenges",
+          },
+        ],
+        bullets: [
+          "Complete carbon reduction challenges and eco-friendly activities",
+          "Track challenge participation and achievements",
+          "Promote long-term sustainable habits through goal-based engagement",
+        ],
+      },
+    ],
+  },
+  {
   id: "outlinx",
   type: "outlinx",
 
   title: "Outlinx",
 
   tagline: "Portfolio Website for a Graphic Design Business",
+
+  github: "https://github.com/rizwana25/outlinx",
+  live: "https://outlinx.vercel.app",
 
   tech: [
     "HTML",
@@ -220,6 +310,8 @@ export const projectsData = [
   title: "Naura Jewels",
 
   tagline: "Luxury Jewellery E-Commerce Website",
+
+  live: "https://naurajewels.com",
 
   tech: [
     "Shopify",
