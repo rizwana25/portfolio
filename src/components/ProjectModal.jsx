@@ -157,7 +157,7 @@ function LegacyProjectShowcase({ sections }) {
 }
 
 */
-function ProjectShowcase({ sections }) {
+function ProjectShowcase({ sections, onImagePreview, showBullets = true }) {
   const showcaseRef = useRef(null);
   const [activeSection, setActiveSection] = useState(0);
 
@@ -222,16 +222,28 @@ function ProjectShowcase({ sections }) {
                 border-[#E8ECE4]
                 "
               >
-                <img
-                  src={section.screenshots[0].image}
-                  alt={section.screenshots[0].title || section.title}
-                  className="
-                  w-full
-                  max-h-[300px]
-                  md:max-h-[620px]
-                  object-contain
-                  "
-                />
+                <button
+                  type="button"
+                  onClick={() =>
+                    onImagePreview({
+                      image: section.screenshots[0].image,
+                      title: section.screenshots[0].title || section.title,
+                    })
+                  }
+                  className="block w-full cursor-zoom-in"
+                  aria-label={`Open ${section.screenshots[0].title || section.title}`}
+                >
+                  <img
+                    src={section.screenshots[0].image}
+                    alt={section.screenshots[0].title || section.title}
+                    className="
+                    w-full
+                    max-h-[300px]
+                    md:max-h-[620px]
+                    object-contain
+                    "
+                  />
+                </button>
               </div>
 
               <div className="mt-4 flex items-center justify-center gap-4">
@@ -353,51 +365,53 @@ function ProjectShowcase({ sections }) {
                 ))}
               </div>
 
-              <div className="max-w-5xl mx-auto mt-6">
-                <ul
-                  className="
-                  grid
-                  gap-3
-                  md:grid-cols-3
-                  "
-                >
-                  {section.bullets.map((item, index) => (
-                    <li
-                      key={index}
-                      className="
-                      flex
-                      items-start
-                      gap-3
-                      rounded-[22px]
-                      bg-[#8FA684]
-                      px-5
-                      py-4
-                      text-white
-                      shadow-sm
-                      hover:scale-[1.02]
-                      transition-all
-                      duration-300
-                      text-[15px]
-                      font-medium
-                      leading-relaxed
-                      "
-                    >
-                      <span
+              {showBullets && section.bullets?.length > 0 && (
+                <div className="max-w-5xl mx-auto mt-6">
+                  <ul
+                    className="
+                    grid
+                    gap-3
+                    md:grid-cols-3
+                    "
+                  >
+                    {section.bullets.map((item, index) => (
+                      <li
+                        key={index}
                         className="
-                        mt-2
                         flex
-                        h-1.5
-                        w-1.5
-                        shrink-0
-                        rounded-full
-                        bg-white
+                        items-start
+                        gap-3
+                        rounded-[22px]
+                        bg-[#8FA684]
+                        px-5
+                        py-4
+                        text-white
+                        shadow-sm
+                        hover:scale-[1.02]
+                        transition-all
+                        duration-300
+                        text-[15px]
+                        font-medium
+                        leading-relaxed
                         "
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                      >
+                        <span
+                          className="
+                          mt-2
+                          flex
+                          h-1.5
+                          w-1.5
+                          shrink-0
+                          rounded-full
+                          bg-white
+                          "
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </SwiperSlide>
         ))}
@@ -409,6 +423,7 @@ function ProjectShowcase({ sections }) {
 function ProjectModal({ project, onClose }) {
   const swiperRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [imagePreview, setImagePreview] = useState(null);
 
   if (!project) return null;
 
@@ -607,7 +622,11 @@ function ProjectModal({ project, onClose }) {
               </p>
             </div>
 
-            <ProjectShowcase sections={project.sections} />
+            <ProjectShowcase
+              sections={project.sections}
+              onImagePreview={setImagePreview}
+              showBullets={!["outlinx", "naura"].includes(project.type)}
+            />
           </>
         ) : (
           <>
@@ -694,16 +713,28 @@ function ProjectModal({ project, onClose }) {
                     bg-white
                     "
                   >
-                    <img
-                      src={shot.image}
-                      alt={shot.title}
-                      className="
-                      w-full
-                      object-contain
-                      max-h-[260px]
-                      md:max-h-[650px]
-                      "
-                    />
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setImagePreview({
+                          image: shot.image,
+                          title: shot.title,
+                        })
+                      }
+                      className="block w-full cursor-zoom-in"
+                      aria-label={`Open ${shot.title}`}
+                    >
+                      <img
+                        src={shot.image}
+                        alt={shot.title}
+                        className="
+                        w-full
+                        object-contain
+                        max-h-[260px]
+                        md:max-h-[650px]
+                        "
+                      />
+                    </button>
 
                     <button
                       type="button"
@@ -918,6 +949,88 @@ function ProjectModal({ project, onClose }) {
         )}
 
       </div>
+
+      {imagePreview && (
+        <div
+          className="
+          fixed
+          inset-0
+          z-[10000]
+          bg-black/80
+          backdrop-blur-sm
+          flex
+          items-center
+          justify-center
+          px-4
+          py-8
+          "
+          onClick={() => setImagePreview(null)}
+        >
+          <button
+            type="button"
+            onClick={() => setImagePreview(null)}
+            className="
+            fixed
+            top-5
+            right-4
+            z-[10001]
+            w-10
+            h-10
+            md:w-12
+            md:h-12
+            rounded-full
+            bg-white
+            text-gray-900
+            shadow-lg
+            flex
+            items-center
+            justify-center
+            hover:scale-105
+            transition-all
+            "
+            aria-label="Close image preview"
+          >
+            <X size={20} />
+          </button>
+
+          <div
+            className="
+            max-w-6xl
+            w-full
+            max-h-full
+            "
+            onClick={(event) => event.stopPropagation()}
+          >
+            <img
+              src={imagePreview.image}
+              alt={imagePreview.title}
+              className="
+              mx-auto
+              max-h-[82vh]
+              max-w-full
+              rounded-[18px]
+              object-contain
+              shadow-2xl
+              "
+            />
+
+            {imagePreview.title && (
+              <p
+                className="
+                mt-4
+                text-center
+                text-white
+                text-sm
+                md:text-base
+                font-medium
+                "
+              >
+                {imagePreview.title}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

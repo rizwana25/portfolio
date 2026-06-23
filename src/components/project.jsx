@@ -4,6 +4,15 @@ import ProjectModal from "./ProjectModal";
 import { projectsData } from "../data/project";
 function Projects() {
 const [selectedProject, setSelectedProject] = useState(null);
+const openProject = (project) => {
+  const projectData = projectsData.find(
+    (p) =>
+      p.title.toLowerCase() ===
+      project.title.toLowerCase()
+  );
+
+  setSelectedProject(projectData);
+};
 const projects = [
 {
 title: "Naura Jewels",
@@ -126,7 +135,9 @@ Works </span> </h2>
           "
         >
           {/* Image */}
-          <div
+          <button
+            type="button"
+            onClick={() => openProject(project)}
             className="
               h-60
               md:h-64
@@ -135,7 +146,10 @@ Works </span> </h2>
               via-[#F9FBF8]
               to-[#E4ECDF]
               overflow-hidden
+              text-left
+              cursor-pointer
             "
+            aria-label={`View ${project.title}`}
           >
             <img
               src={project.image}
@@ -144,9 +158,12 @@ Works </span> </h2>
                 w-full
                 h-full
                 object-cover
+                transition-transform
+                duration-300
+                hover:scale-105
               "
             />
-          </div>
+          </button>
 
           {/* Content */}
           <div
@@ -221,15 +238,7 @@ Works </span> </h2>
             {/* Button */}
             <div className="mt-6">
             <button
-  onClick={() => {
-    const projectData = projectsData.find(
-      (p) =>
-        p.title.toLowerCase() ===
-        project.title.toLowerCase()
-    );
-
-    setSelectedProject(projectData);
-  }}
+  onClick={() => openProject(project)}
   className="
     inline-flex
     items-center
