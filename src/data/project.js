@@ -58,7 +58,7 @@ export const projectsData = [
     tech: ["Flutter", "Node.js", "MySQL", "NLP", "Machine Learning"],
 
     overview:
-      "SafeSpace is an anonymous reporting platform designed to improve campus safety by enabling students to report incidents and seek counselling support without revealing their identity. The platform combines secure communication, role-based access, NLP-based report analysis, and campus analytics to help institutions respond to safety concerns more effectively.",
+      "SafeSpace is an anonymous reporting platform designed to improve campus safety by enabling students to report incidents and seek counselling support without revealing their identity.",
 
     sections: [
       {
@@ -124,7 +124,7 @@ export const projectsData = [
     title: "Carbon Footprint Tracker",
     tagline: "Web Application for Sustainable Habit Tracking",
 
-    github: "https://github.com/rizwana25/carbon-footprint-tracker",
+    github: "https://github.com/rizwana25/Carbon-Footprint.git",
 
     tech: ["Flask", "MySQL", "HTML", "CSS", "JavaScript"],
 
@@ -212,7 +212,7 @@ export const projectsData = [
 
   tagline: "Portfolio Website for a Graphic Design Business",
 
-  github: "https://github.com/rizwana25/outlinx",
+  github: "https://github.com/rizwana25/outlinx.git",
   live: "https://outlinx.vercel.app",
 
   tech: [
@@ -244,7 +244,7 @@ export const projectsData = [
       title: "About Section",
       screenshots: [
         {
-          image: "/projects/out4.jpeg",
+          image: "/projects/out2.jpeg",
           title: "About Section",
         },
       ],
@@ -297,7 +297,7 @@ export const projectsData = [
 
   tagline: "Luxury Jewellery E-Commerce Website",
 
-  live: "https://naurajewels.com",
+  live: "https://www.naurajewels.in",
 
   tech: [
     "Shopify",

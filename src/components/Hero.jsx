@@ -4,6 +4,8 @@ function Hero() {
       className="
       min-h-screen
       pt-32
+      pb-14
+      md:pb-0
       bg-gradient-to-br
       from-[#EEF4EA]
       via-[#F9FBF8]
@@ -129,15 +131,16 @@ function Hero() {
             leading-relaxed
             "
           >
-            Hi, I'm Fathimath Rizwana, a developer focused on web,
-            mobile, and e-commerce solutions. I enjoy transforming
-            ideas into digital products that are intuitive,
-            reliable, and built for real-world use.
+            A developer focused on web, mobile, and e-commerce
+            solutions. I enjoy transforming ideas into digital
+            products that are intuitive, reliable, and built for
+            real-world use.
           </p>
 
-          <div className="flex gap-3 mt-8">
+          <div className="flex gap-3 mt-8 mb-4">
 
-            <button
+            <a
+              href="#projects"
               className="
               flex-1
               bg-[#8FA684]
@@ -145,12 +148,16 @@ function Hero() {
               py-3
               rounded-xl
               font-medium
+              text-center
               "
             >
               View My Work
-            </button>
+            </a>
 
-            <button
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="
               flex-1
               border-2
@@ -159,10 +166,11 @@ function Hero() {
               py-3
               rounded-xl
               font-medium
+              text-center
               "
             >
               Resume
-            </button>
+            </a>
 
           </div>
 
@@ -275,15 +283,16 @@ function Hero() {
             max-w-xl
             "
           >
-            Hi, I'm Fathimath Rizwana, a developer focused on web,
-            mobile, and e-commerce solutions. I enjoy transforming
-            ideas into digital products that are intuitive,
-            reliable, and built for real-world use.
+            A developer focused on web, mobile, and e-commerce
+            solutions. I enjoy transforming ideas into digital
+            products that are intuitive, reliable, and built for
+            real-world use.
           </p>
 
           <div className="flex gap-4 mt-10">
 
-            <button
+            <a
+              href="#projects"
               className="
               bg-[#8FA684]
               text-white
@@ -294,9 +303,12 @@ function Hero() {
               "
             >
               View My Work
-            </button>
+            </a>
 
-            <button
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="
               border-2
               border-[#8FA684]
@@ -308,7 +320,7 @@ function Hero() {
               "
             >
               Download Resume
-            </button>
+            </a>
 
           </div>
 

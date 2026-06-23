@@ -167,7 +167,7 @@ function Navbar() {
               mt-2
               "
             >
-              Hire Me
+              Contact Me
             </a>
 
           </div>
