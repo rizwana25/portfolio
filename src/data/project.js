@@ -213,7 +213,7 @@ export const projectsData = [
   tagline: "Portfolio Website for a Graphic Design Business",
 
   github: "https://github.com/rizwana25/outlinx.git",
-  live: "https://outlinx.vercel.app",
+  live: "https://outlinx.onrender.com",
 
   tech: [
     "HTML",
@@ -345,7 +345,7 @@ export const projectsData = [
 
       screenshots: [
         {
-          image: "/projects/naura3.jpeg",
+          image: "/projects/naura3.png",
           title: "Product Details",
         },
       ],
@@ -357,11 +357,11 @@ export const projectsData = [
     },
 
     {
-      title: "Shopping Experience",
+      title: "Payment Integration",
       screenshots: [
         {
-          image: "/projects/naura4.jpeg",
-          title: "Shopping Experience",
+          image: "/projects/naura4.png",
+          title: "Payment Integration",
         },
       ],
       bullets: [
@@ -371,20 +371,7 @@ export const projectsData = [
       ],
     },
 
-    {
-      title: "Brand & Contact",
-      screenshots: [
-        {
-          image: "/projects/naura5.jpeg",
-          title: "Brand & Contact",
-        },
-      ],
-      bullets: [
-        "Communicates the story and identity of the brand",
-        "Builds trust through a professional presentation",
-        "Provides clear channels for customer inquiries",
-      ],
-    },
+   
   ],
 }
 ];

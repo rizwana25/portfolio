@@ -65,7 +65,7 @@ tech: ["Shopify", "Liquid"],
   category: "AI-Powered Web Application",
   description:
     "A web application that analyzes scanned documents to identify the scanner used to create them through image processing techniques.",
-  image: "/projects/tracefinder.jpg",
+  image: "/cover/tracefinder.png",
   tech: ["Python", "OpenCV", "Machine Learning", "Flask"],
 },
 
@@ -79,16 +79,16 @@ return ( <section
      bg-white
    "
  > <div className="max-w-7xl mx-auto px-6 md:px-10">
-{/* Heading */} <div className="text-center mb-16"> <h2
+{/* Heading */} <div className="mb-10 md:mb-16"> <h2
          className="
            text-4xl
            md:text-6xl
            lg:text-7xl
-           font-black
+           font-bold
            text-gray-900
          "
        >
-Selected{" "} <span className="text-[#8FA684]">
+Featured{" "} <span className="text-[#8FA684]">
 Works </span> </h2>
 
       <p
@@ -96,7 +96,6 @@ Works </span> </h2>
           mt-5
           text-gray-600
           max-w-2xl
-          mx-auto
           leading-relaxed
         "
       >

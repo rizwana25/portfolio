@@ -16,35 +16,26 @@ function About() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
-        {/* Label with accent line */}
-        <div className="flex items-center gap-4 mb-8">
-          <div className="h-px w-12 bg-[#CBB89A]"></div>
-          <p className="uppercase tracking-[4px] text-[#CBB89A] font-semibold text-sm">
-            About Me
-          </p>
+        {/* Heading */}
+        <div className="mb-10 md:mb-16">
+          <h2
+            className="
+              text-4xl
+              md:text-6xl
+              lg:text-7xl
+              font-bold
+              text-gray-900
+            "
+          >
+            About{" "}
+            <span className="text-[#8FA684]">
+              Me
+            </span>
+          </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          {/* Left Column - Main Heading */}
-          <div className="space-y-6">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.2] text-gray-900">
-              Building digital
-              <span className="block mt-2 bg-gradient-to-r from-gray-900 to-[#CBB89A] bg-clip-text text-transparent">
-                solutions that feel
-              </span>
-              <span className="block mt-2">effortless to use.</span>
-            </h2>
-            
-            {/* Decorative element */}
-            <div className="flex gap-2 mt-8">
-              <div className="w-2 h-2 rounded-full bg-[#CBB89A]"></div>
-              <div className="w-2 h-2 rounded-full bg-[#CBB89A]/60"></div>
-              <div className="w-2 h-2 rounded-full bg-[#CBB89A]/30"></div>
-            </div>
-          </div>
-
-          {/* Right Column - Bio Content */}
-          <div className="space-y-8">
+        {/* Bio Content */}
+        <div className="max-w-3xl space-y-8">
             {/* First paragraph with quote style */}
             <div className="relative pl-6 border-l-4 border-[#CBB89A]">
               <p className="text-lg md:text-xl leading-relaxed text-gray-700 font-medium">
@@ -81,7 +72,6 @@ function About() {
                 </svg>
               </a>
             </div>
-          </div>
         </div>
       </div>
     </section>
