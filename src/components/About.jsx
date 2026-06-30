@@ -3,7 +3,8 @@ function About() {
     <section
       id="about"
       className="
-        py-32
+        py-14
+        md:py-20
         relative
         overflow-hidden
         bg-gradient-to-br from-[#F9FBF8] via-white to-[#F9FBF8]
@@ -17,7 +18,7 @@ function About() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
         {/* Heading */}
-        <div className="mb-10 md:mb-16">
+        <div className="mb-8 md:mb-10">
           <h2
             className="
               text-4xl

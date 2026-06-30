@@ -75,11 +75,12 @@ tech: ["Shopify", "Liquid"],
 return ( <section
    id="projects"
    className="
-     py-24
+     py-14
+     md:py-20
      bg-white
    "
  > <div className="max-w-7xl mx-auto px-6 md:px-10">
-{/* Heading */} <div className="mb-10 md:mb-16"> <h2
+{/* Heading */} <div className="mb-8 md:mb-10"> <h2
          className="
            text-4xl
            md:text-6xl

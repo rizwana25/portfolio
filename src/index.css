@@ -22,3 +22,35 @@ body {
 .animate-scroll:hover {
   animation-play-state: paused;
 }
+
+@keyframes hero-role-roll {
+  0%,
+  22% {
+    transform: translateY(0);
+  }
+
+  30%,
+  52% {
+    transform: translateY(-1.6em);
+  }
+
+  60%,
+  82% {
+    transform: translateY(-3.2em);
+  }
+
+  90%,
+  100% {
+    transform: translateY(-4.8em);
+  }
+}
+
+.hero-role-roller {
+  animation: hero-role-roll 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-role-roller {
+    animation: none;
+  }
+}

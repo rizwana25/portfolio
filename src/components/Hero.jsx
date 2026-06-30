@@ -1,3 +1,29 @@
+function RollingRole({ className = "" }) {
+  return (
+    <div
+      className={`
+      inline-flex
+      items-center
+      justify-center
+      gap-2
+      font-semibold
+      text-gray-900
+      ${className}
+      `}
+    >
+      <span className="relative h-[1.6em] min-w-[96px] overflow-hidden text-right md:min-w-[116px]">
+        <span className="hero-role-roller absolute left-0 top-0 flex w-full flex-col">
+          <span className="h-[1.6em]">Web</span>
+          <span className="h-[1.6em]">Mobile App</span>
+          <span className="h-[1.6em]">Shopify</span>
+          <span className="h-[1.6em]">Web</span>
+        </span>
+      </span>
+      <span>Developer</span>
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section
@@ -79,36 +105,7 @@ function Hero() {
           </h1>
 
           {/* Roles */}
-          <div
-            className="
-            flex
-            flex-wrap
-            justify-center
-            items-center
-            mt-6
-            text-[16px]
-            "
-          >
-            <span className="font-semibold text-gray-900">
-              Web Developer
-            </span>
-
-            <span className="mx-3 text-[#CBB89A] text-lg">
-              •
-            </span>
-
-            <span className="font-semibold text-gray-900">
-              Mobile App Developer
-            </span>
-
-            <span className="mx-3 text-[#CBB89A] text-lg">
-              •
-            </span>
-
-            <span className="font-semibold text-gray-900">
-              Shopify Developer
-            </span>
-          </div>
+          <RollingRole className="mt-6 text-[16px]" />
 
           <h2
             className="
@@ -160,16 +157,15 @@ function Hero() {
               rel="noreferrer"
               className="
               flex-1
-              border-2
-              border-[#8FA684]
-              text-[#8FA684]
+              bg-[#8FA684]
+              text-white
               py-3
               rounded-xl
               font-medium
               text-center
               "
             >
-              Resume
+              Download Resume
             </a>
 
           </div>
@@ -229,36 +225,7 @@ function Hero() {
           </h1>
 
           {/* Roles */}
-          <div
-            className="
-            flex
-            flex-wrap
-            items-center
-            mt-6
-            mb-8
-            text-[18px]
-            "
-          >
-            <span className="font-semibold text-gray-900">
-              Web Developer
-            </span>
-
-            <span className="mx-5 text-[#CBB89A] text-xl">
-              •
-            </span>
-
-            <span className="font-semibold text-gray-900">
-              Mobile App Developer
-            </span>
-
-            <span className="mx-5 text-[#CBB89A] text-xl">
-              •
-            </span>
-
-            <span className="font-semibold text-gray-900">
-              Shopify Developer
-            </span>
-          </div>
+          <RollingRole className="mt-6 mb-8 text-[18px]" />
 
           <h2
             className="
@@ -310,9 +277,8 @@ function Hero() {
               target="_blank"
               rel="noreferrer"
               className="
-              border-2
-              border-[#8FA684]
-              text-[#8FA684]
+              bg-[#8FA684]
+              text-white
               px-8
               py-4
               rounded-xl
