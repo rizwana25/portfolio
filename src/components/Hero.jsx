@@ -22,7 +22,7 @@ function Hero() {
           <div
             className="
             absolute
-            top-8
+            top-12
             w-56
             h-56
             bg-[#DDE8D7]
