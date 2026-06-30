@@ -1,35 +1,10 @@
-function RollingRole({ className = "" }) {
-  return (
-    <div
-      className={`
-      inline-flex
-      items-center
-      justify-center
-      gap-2
-      font-semibold
-      text-gray-900
-      ${className}
-      `}
-    >
-      <span className="relative h-[1.6em] min-w-[96px] overflow-hidden text-right md:min-w-[116px]">
-        <span className="hero-role-roller absolute left-0 top-0 flex w-full flex-col">
-          <span className="h-[1.6em]">Web</span>
-          <span className="h-[1.6em]">Mobile App</span>
-          <span className="h-[1.6em]">Shopify</span>
-          <span className="h-[1.6em]">Web</span>
-        </span>
-      </span>
-      <span>Developer</span>
-    </div>
-  );
-}
-
 function Hero() {
   return (
     <section
       className="
       min-h-screen
-      pt-32
+      pt-20
+      md:pt-32
       pb-14
       md:pb-0
       bg-gradient-to-br
@@ -39,7 +14,7 @@ function Hero() {
       "
     >
       {/* MOBILE */}
-      <div className="md:hidden px-6">
+      <div className="md:hidden px-6 -mt-4">
 
         {/* Image */}
         <div className="relative flex justify-center">
@@ -47,8 +22,8 @@ function Hero() {
           <div
             className="
             absolute
-            w-64
-            h-64
+            w-56
+            h-56
             bg-[#DDE8D7]
             opacity-80
             "
@@ -62,7 +37,7 @@ function Hero() {
             alt="Fathimath Rizwana"
             className="
             relative
-            w-72
+            w-64
             object-contain
             z-10
             "
@@ -70,7 +45,7 @@ function Hero() {
         </div>
 
         {/* Content */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-4">
 
           <p
             className="
@@ -105,7 +80,36 @@ function Hero() {
           </h1>
 
           {/* Roles */}
-          <RollingRole className="mt-6 text-[16px]" />
+          <div
+            className="
+            flex
+            flex-wrap
+            justify-center
+            items-center
+            mt-6
+            text-[16px]
+            "
+          >
+            <span className="font-semibold text-gray-900">
+              Web Developer
+            </span>
+
+            <span className="mx-3 text-[#CBB89A] text-lg">
+              •
+            </span>
+
+            <span className="font-semibold text-gray-900">
+              Mobile App Developer
+            </span>
+
+            <span className="mx-3 text-[#CBB89A] text-lg">
+              •
+            </span>
+
+            <span className="font-semibold text-gray-900">
+              Shopify Developer
+            </span>
+          </div>
 
           <h2
             className="
@@ -225,7 +229,36 @@ function Hero() {
           </h1>
 
           {/* Roles */}
-          <RollingRole className="mt-6 mb-8 text-[18px]" />
+          <div
+            className="
+            flex
+            flex-wrap
+            items-center
+            mt-6
+            mb-8
+            text-[18px]
+            "
+          >
+            <span className="font-semibold text-gray-900">
+              Web Developer
+            </span>
+
+            <span className="mx-5 text-[#CBB89A] text-xl">
+              •
+            </span>
+
+            <span className="font-semibold text-gray-900">
+              Mobile App Developer
+            </span>
+
+            <span className="mx-5 text-[#CBB89A] text-xl">
+              •
+            </span>
+
+            <span className="font-semibold text-gray-900">
+              Shopify Developer
+            </span>
+          </div>
 
           <h2
             className="
